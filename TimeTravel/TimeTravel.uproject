@@ -1,0 +1,13 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "4.20",
+	"Category": "MMORPG",
+	"Description": "Learning MMORPG Project",
+	"Modules": [
+		{
+			"Name": "TimeTravel",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
