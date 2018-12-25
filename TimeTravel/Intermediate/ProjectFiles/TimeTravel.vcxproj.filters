@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\TimeTravel.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{F95621A5-0E06-4B4C-9088-821081CFA06B}</UniqueIdentifier>
+      <UniqueIdentifier>{CBDDF1CA-5194-4A46-896A-910C557BA38F}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\TimeTravel.Target.cs">
       <Filter>Source</Filter>
@@ -12,9 +12,12 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{4F23C014-657B-4DE8-BE6F-26ECA88B4851}</UniqueIdentifier>
+      <UniqueIdentifier>{7AA7A661-C60A-42E9-BC39-889DF9AB853C}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
       <Filter>Config</Filter>
     </None>
     <None Include="..\..\Config\DefaultEngine.ini">
@@ -23,29 +26,32 @@
     <None Include="..\..\Config\DefaultGame.ini">
       <Filter>Config</Filter>
     </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
     <Filter Include="Plugins">
-      <UniqueIdentifier>{BC013442-8365-4D5C-A51A-9BBE87920367}</UniqueIdentifier>
+      <UniqueIdentifier>{983C028C-EA2C-4AE3-8731-60AF068682D6}</UniqueIdentifier>
     </Filter>
     <Filter Include="Plugins\Climb">
-      <UniqueIdentifier>{FD4C52B9-47B8-4751-A6D0-ACC9F1D8726F}</UniqueIdentifier>
+      <UniqueIdentifier>{33266205-0A4D-4BA7-8548-87AAD6D0475C}</UniqueIdentifier>
     </Filter>
     <Filter Include="Plugins\Climb\Source">
-      <UniqueIdentifier>{294B7D31-DD99-484C-9F60-3C47633CCDF1}</UniqueIdentifier>
+      <UniqueIdentifier>{50563F03-6BBE-49F6-9DB1-E8E19BCE93DC}</UniqueIdentifier>
     </Filter>
     <Filter Include="Plugins\Climb\Source\Climb">
-      <UniqueIdentifier>{B13DEBF5-795D-4E8D-8E65-65A93BB0BDC4}</UniqueIdentifier>
+      <UniqueIdentifier>{BF22E3D1-B9B7-44AB-980C-A670173F25AA}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Plugins\Climb\Source\Climb\Climb.Build.cs">
       <Filter>Plugins\Climb\Source\Climb</Filter>
     </None>
     <Filter Include="Plugins\Climb\Source\Climb\Private">
-      <UniqueIdentifier>{517DBEA1-87E2-4A10-B322-25DFB2DA992E}</UniqueIdentifier>
+      <UniqueIdentifier>{BED942AD-ABC9-41DF-AC35-1D97299BA457}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Plugins\Climb\Source\Climb\Private\Climb.cpp">
       <Filter>Plugins\Climb\Source\Climb\Private</Filter>
     </ClCompile>
     <Filter Include="Plugins\Climb\Source\Climb\Public">
-      <UniqueIdentifier>{9FFFFC28-9473-4C8C-B484-2E5F31663114}</UniqueIdentifier>
+      <UniqueIdentifier>{72CA4B80-430A-4BFF-AF05-4DFB6202914D}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Plugins\Climb\Source\Climb\Public\Climb.h">
       <Filter>Plugins\Climb\Source\Climb\Public</Filter>
@@ -54,13 +60,13 @@
       <Filter>Plugins\Climb</Filter>
     </None>
     <Filter Include="Plugins\Climb\Resources">
-      <UniqueIdentifier>{E3D349E7-7E44-46A7-8217-13EF8E2A27BB}</UniqueIdentifier>
+      <UniqueIdentifier>{601070D5-644E-429D-A82F-0B5CCEA86DF1}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Plugins\Climb\Resources\Icon128.png">
       <Filter>Plugins\Climb\Resources</Filter>
     </None>
     <Filter Include="Source\TimeTravel">
-      <UniqueIdentifier>{965B8FB9-F34C-4321-9C33-2E65C7658F2A}</UniqueIdentifier>
+      <UniqueIdentifier>{EB8007AF-FFB6-4678-9917-945834BAA619}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\TimeTravel\TimeTravel.Build.cs">
       <Filter>Source\TimeTravel</Filter>
@@ -71,21 +77,27 @@
     <ClInclude Include="..\..\Source\TimeTravel\TimeTravel.h">
       <Filter>Source\TimeTravel</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\TimeTravel\TimeTravelGameModeBase.cpp">
+    <ClCompile Include="..\..\Source\TimeTravel\TimeTravelCharacter.cpp">
       <Filter>Source\TimeTravel</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\TimeTravel\TimeTravelGameModeBase.h">
+    <ClInclude Include="..\..\Source\TimeTravel\TimeTravelCharacter.h">
       <Filter>Source\TimeTravel</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="ClimbObject.h">
-      <Filter>Plugins\Climb\Source\Climb\Public</Filter>
+    <ClCompile Include="..\..\Source\TimeTravel\TimeTravelGameMode.cpp">
+      <Filter>Source\TimeTravel</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TimeTravel\TimeTravelGameMode.h">
+      <Filter>Source\TimeTravel</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ClimbObject.cpp">
       <Filter>Plugins\Climb\Source\Climb\Private</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ClimbObject.h">
+      <Filter>Plugins\Climb\Source\Climb\Public</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

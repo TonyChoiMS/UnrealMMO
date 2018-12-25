@@ -19,8 +19,8 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravel_init() {}
 			static const UE4CodeGen_Private::FPackageParams PackageParams = {
 				"/Script/TimeTravel",
 				PKG_CompiledIn | 0x00000000,
-				0x7CC70A95,
-				0xD90BEE88,
+				0x0F8993AC,
+				0xDB877913,
 				nullptr, 0,
 				METADATA_PARAMS(nullptr, 0)
 			};

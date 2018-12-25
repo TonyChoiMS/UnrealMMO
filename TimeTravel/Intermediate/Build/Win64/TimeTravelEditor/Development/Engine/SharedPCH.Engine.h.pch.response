@@ -48,6 +48,7 @@
 /I Runtime\MessagingCommon\Public
 /I Runtime\RenderCore\Public
 /I Runtime\ShaderCore\Public
+/I Runtime\Sockets\Public
 /I Runtime\UtilityShaders\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\AssetRegistry
 /I Runtime\AssetRegistry\Public
@@ -72,9 +73,11 @@
 /I Runtime\AudioPlatformConfiguration\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\MeshDescription
 /I Runtime\MeshDescription\Public
+/I Runtime\PakFile\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\UnrealEd
 /I Editor
 /I Programs\UnrealLightmass\Public
+/I Developer\Android\AndroidDeviceDetection\Public\Interfaces
 /I Editor\UnrealEd\Classes
 /I Editor\UnrealEd\Public
 /I Editor\BspMode\Public
@@ -132,7 +135,6 @@
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\ContentBrowser
 /I Editor\ContentBrowser\Public
 /I Runtime\NetworkFileSystem\Public
-/I Runtime\Sockets\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\UMG
 /I Runtime\UMG\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\MovieScene
@@ -148,6 +150,8 @@
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\NavigationSystem
 /I Runtime\NavigationSystem\Public
 /I Developer\MeshBuilder\Public
+/I ..\Intermediate\Build\Win64\UE4Editor\Inc\MaterialShaderQualitySettings
+/I Runtime\MaterialShaderQualitySettings\Classes
 /I Runtime\Windows
 /I Runtime\Windows\XAudio2\Public
 /I Runtime\AudioMixer\Public
@@ -179,16 +183,16 @@
 /I Runtime\AudioMixer\Classes
 /I ThirdParty
 /I ThirdParty\libSampleRate\Public
-/I "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\INCLUDE"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt"
-/I C:\Users\MinLion\Desktop\UnrealProjects\TimeTravel\Intermediate\Build\Win64\TimeTravelEditor\Development\Engine
-/Yc"C:\Users\MinLion\Desktop\UnrealProjects\TimeTravel\Intermediate\Build\Win64\TimeTravelEditor\Development\Engine\SharedPCH.Engine.h"
-/Fp"C:\Users\MinLion\Desktop\UnrealProjects\TimeTravel\Intermediate\Build\Win64\TimeTravelEditor\Development\Engine\SharedPCH.Engine.h.pch"
-"C:\Users\MinLion\Desktop\UnrealProjects\TimeTravel\Intermediate\Build\Win64\TimeTravelEditor\Development\Engine\SharedPCH.Engine.cpp"
-/Fo"C:\Users\MinLion\Desktop\UnrealProjects\TimeTravel\Intermediate\Build\Win64\TimeTravelEditor\Development\Engine\SharedPCH.Engine.h.obj"
+/I "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\INCLUDE"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt"
+/I C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Intermediate\Build\Win64\TimeTravelEditor\Development\Engine
+/Yc"C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Intermediate\Build\Win64\TimeTravelEditor\Development\Engine\SharedPCH.Engine.h"
+/Fp"C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Intermediate\Build\Win64\TimeTravelEditor\Development\Engine\SharedPCH.Engine.h.pch"
+"C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Intermediate\Build\Win64\TimeTravelEditor\Development\Engine\SharedPCH.Engine.cpp"
+/Fo"C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Intermediate\Build\Win64\TimeTravelEditor\Development\Engine\SharedPCH.Engine.h.obj"
 /TP
 /GR-
 /W4

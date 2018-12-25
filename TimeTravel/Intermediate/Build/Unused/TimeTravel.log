@@ -1,34 +1,11 @@
 ﻿  Cleaning TimeTravelEditor Binaries...
-  Creating makefile for TimeTravelEditor (no existing makefile)
-  Performing full C++ include scan (no include cache file)
-  Using Visual Studio 2017 14.15.26726 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726) and Windows 10.0.17134.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  Parsing headers for TimeTravelEditor
-    Running UnrealHeaderTool "C:\Users\MinLion\Desktop\UnrealProjects\TimeTravel\TimeTravel.uproject" "C:\Users\MinLion\Desktop\UnrealProjects\TimeTravel\Intermediate\Build\Win64\TimeTravelEditor\Development\TimeTravelEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
-  Reflection code generated for TimeTravelEditor in 7.163177 seconds
-  Deleting old hot reload file: "C:\Users\MinLion\Desktop\UnrealProjects\TimeTravel\Binaries\Win64\UE4Editor-TimeTravel-1807.dll".
-  Deleting old hot reload file: "C:\Users\MinLion\Desktop\UnrealProjects\TimeTravel\Binaries\Win64\UE4Editor-TimeTravel-1807.pdb".
-  Deleting old hot reload file: "C:\Users\MinLion\Desktop\UnrealProjects\TimeTravel\Binaries\Win64\UE4Editor-TimeTravel-2431.dll".
-  Deleting old hot reload file: "C:\Users\MinLion\Desktop\UnrealProjects\TimeTravel\Binaries\Win64\UE4Editor-TimeTravel-2431.pdb".
-  Deleting old hot reload file: "C:\Users\MinLion\Desktop\UnrealProjects\TimeTravel\Binaries\Win64\UE4Editor-TimeTravel-3989.dll".
-  Deleting old hot reload file: "C:\Users\MinLion\Desktop\UnrealProjects\TimeTravel\Binaries\Win64\UE4Editor-TimeTravel-3989.pdb".
-  Deleting old hot reload file: "C:\Users\MinLion\Desktop\UnrealProjects\TimeTravel\Plugins\Climb\Binaries\Win64\UE4Editor-Climb-3989.dll".
-  Deleting old hot reload file: "C:\Users\MinLion\Desktop\UnrealProjects\TimeTravel\Plugins\Climb\Binaries\Win64\UE4Editor-Climb-3989.pdb".
-  Building 12 actions with 6 processes...
-    [1/12] PCLaunch.rc
-    [2/12] PCLaunch.rc
-    [3/12] SharedPCH.Engine.cpp
-    [4/12] Module.Climb.cpp
-    [5/12] TimeTravel.init.gen.cpp
-    [6/12] TimeTravelGameModeBase.cpp
-    [7/12] UE4Editor-Climb.lib
-       C:\Users\MinLion\Desktop\UnrealProjects\TimeTravel\Plugins\Climb\Intermediate\Build\Win64\UE4Editor\Development\Climb\UE4Editor-Climb.lib ????귯?? ?? C:\Users\MinLion\Desktop\UnrealProjects\TimeTravel\Plugins\Climb\Intermediate\Build\Win64\UE4Editor\Development\Climb\UE4Editor-Climb.exp ??u?? ??????? ??????.
-    [8/12] TimeTravelGameModeBase.gen.cpp
-    [9/12] UE4Editor-Climb.dll
-       C:\Users\MinLion\Desktop\UnrealProjects\TimeTravel\Plugins\Climb\Intermediate\Build\Win64\UE4Editor\Development\Climb\UE4Editor-Climb.suppressed.lib ????귯?? ?? C:\Users\MinLion\Desktop\UnrealProjects\TimeTravel\Plugins\Climb\Intermediate\Build\Win64\UE4Editor\Development\Climb\UE4Editor-Climb.suppressed.exp ??u?? ??????? ??????.
-    [10/12] TimeTravel.cpp
-    [11/12] UE4Editor-TimeTravel.lib
-       C:\Users\MinLion\Desktop\UnrealProjects\TimeTravel\Intermediate\Build\Win64\UE4Editor\Development\TimeTravel\UE4Editor-TimeTravel.lib ????귯?? ?? C:\Users\MinLion\Desktop\UnrealProjects\TimeTravel\Intermediate\Build\Win64\UE4Editor\Development\TimeTravel\UE4Editor-TimeTravel.exp ??u?? ??????? ??????.
-    [12/12] UE4Editor-TimeTravel.dll
-       C:\Users\MinLion\Desktop\UnrealProjects\TimeTravel\Intermediate\Build\Win64\UE4Editor\Development\TimeTravel\UE4Editor-TimeTravel.suppressed.lib ????귯?? ?? C:\Users\MinLion\Desktop\UnrealProjects\TimeTravel\Intermediate\Build\Win64\UE4Editor\Development\TimeTravel\UE4Editor-TimeTravel.suppressed.exp ??u?? ??????? ??????.
+UnrealBuildTool : error : Unable to clean target while hot-reloading. Close the editor and try again.
+                          (see ../Programs/UnrealBuildTool/Log.txt for full exception trace)
+  Using 'git status' to determine working set for adaptive non-unity build (C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO).
+  Creating makefile for hot reloading TimeTravelEditor (game project files are newer)
+  Compiling game modules for hot reload
+  Using Visual Studio 2017 14.16.27023 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023) and Windows 10.0.17763.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+  Target is up to date
   Deploying TimeTravelEditor Win64 Development...
-  Total build time: 37.38 seconds (Parallel executor: 25.39 seconds)
+  Total build time: 3.46 seconds (NoActionsToExecute executor: 0.00 seconds)
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.MakeFile.Targets(49,5): error MSB3073: ""C:\Program Files\Epic Games\UE_4.21\Engine\Build\BatchFiles\Rebuild.bat" TimeTravelEditor Win64 Development "C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\TimeTravel.uproject" -WaitMutex -FromMsBuild" 명령이 종료되었습니다(코드: -1).
