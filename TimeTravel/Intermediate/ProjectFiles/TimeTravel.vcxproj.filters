@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\TimeTravel.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{CBDDF1CA-5194-4A46-896A-910C557BA38F}</UniqueIdentifier>
+      <UniqueIdentifier>{BBFBAF23-2655-45B1-832C-CB2B3CC92671}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\TimeTravel.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{7AA7A661-C60A-42E9-BC39-889DF9AB853C}</UniqueIdentifier>
+      <UniqueIdentifier>{F20C1338-5CC3-4A8B-ADBD-BDAC945B89D2}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,28 +30,28 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Plugins">
-      <UniqueIdentifier>{983C028C-EA2C-4AE3-8731-60AF068682D6}</UniqueIdentifier>
+      <UniqueIdentifier>{1C26BE3F-C13D-4BEB-9CA8-12D74BAAF954}</UniqueIdentifier>
     </Filter>
     <Filter Include="Plugins\Climb">
-      <UniqueIdentifier>{33266205-0A4D-4BA7-8548-87AAD6D0475C}</UniqueIdentifier>
+      <UniqueIdentifier>{433538D6-B314-4F14-A672-41E08FC960DA}</UniqueIdentifier>
     </Filter>
     <Filter Include="Plugins\Climb\Source">
-      <UniqueIdentifier>{50563F03-6BBE-49F6-9DB1-E8E19BCE93DC}</UniqueIdentifier>
+      <UniqueIdentifier>{C62D8B1D-6A3D-440B-821E-B03438FDCF99}</UniqueIdentifier>
     </Filter>
     <Filter Include="Plugins\Climb\Source\Climb">
-      <UniqueIdentifier>{BF22E3D1-B9B7-44AB-980C-A670173F25AA}</UniqueIdentifier>
+      <UniqueIdentifier>{C1585701-E90C-4B9C-876E-F3CF3B8284CF}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Plugins\Climb\Source\Climb\Climb.Build.cs">
       <Filter>Plugins\Climb\Source\Climb</Filter>
     </None>
     <Filter Include="Plugins\Climb\Source\Climb\Private">
-      <UniqueIdentifier>{BED942AD-ABC9-41DF-AC35-1D97299BA457}</UniqueIdentifier>
+      <UniqueIdentifier>{3E7E4FB3-3F8A-4713-8A29-99E46F0A6697}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Plugins\Climb\Source\Climb\Private\Climb.cpp">
       <Filter>Plugins\Climb\Source\Climb\Private</Filter>
     </ClCompile>
     <Filter Include="Plugins\Climb\Source\Climb\Public">
-      <UniqueIdentifier>{72CA4B80-430A-4BFF-AF05-4DFB6202914D}</UniqueIdentifier>
+      <UniqueIdentifier>{D7F0EDAC-4727-42DC-ACE5-2DC7A269F4CD}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Plugins\Climb\Source\Climb\Public\Climb.h">
       <Filter>Plugins\Climb\Source\Climb\Public</Filter>
@@ -60,14 +60,20 @@
       <Filter>Plugins\Climb</Filter>
     </None>
     <Filter Include="Plugins\Climb\Resources">
-      <UniqueIdentifier>{601070D5-644E-429D-A82F-0B5CCEA86DF1}</UniqueIdentifier>
+      <UniqueIdentifier>{B9251EBF-6A4E-40F7-BAAB-32871CD92171}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Plugins\Climb\Resources\Icon128.png">
       <Filter>Plugins\Climb\Resources</Filter>
     </None>
     <Filter Include="Source\TimeTravel">
-      <UniqueIdentifier>{EB8007AF-FFB6-4678-9917-945834BAA619}</UniqueIdentifier>
+      <UniqueIdentifier>{334C578E-4599-4A97-91F1-7FD34EC4DC4F}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\TimeTravel\Sword.cpp">
+      <Filter>Source\TimeTravel</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TimeTravel\Sword.h">
+      <Filter>Source\TimeTravel</Filter>
+    </ClInclude>
     <None Include="..\..\Source\TimeTravel\TimeTravel.Build.cs">
       <Filter>Source\TimeTravel</Filter>
     </None>
@@ -88,16 +94,6 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\TimeTravel\TimeTravelGameMode.h">
       <Filter>Source\TimeTravel</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="ClimbObject.cpp">
-      <Filter>Plugins\Climb\Source\Climb\Private</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="ClimbObject.h">
-      <Filter>Plugins\Climb\Source\Climb\Public</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

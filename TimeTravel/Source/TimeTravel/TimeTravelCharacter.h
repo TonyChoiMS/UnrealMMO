@@ -29,8 +29,14 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
 	float BaseLookUpRate;
 
+	UPROPERTY(EditDefaultsOnly, Category = Weapon)
+		TSubclassOf<class ASword> SwordClass;
+
 protected:
 
+	virtual void BeginPlay() override;
+
+	void SpawnDefaultInventory();
 	/** Resets HMD orientation in VR. */
 	void OnResetVR();
 

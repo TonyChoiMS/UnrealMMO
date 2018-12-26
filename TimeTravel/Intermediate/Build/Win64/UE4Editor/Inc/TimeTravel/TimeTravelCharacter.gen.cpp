@@ -17,6 +17,8 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelCharacter() {}
 	TIMETRAVEL_API UClass* Z_Construct_UClass_ATimeTravelCharacter();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	UPackage* Z_Construct_UPackage__Script_TimeTravel();
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
+	TIMETRAVEL_API UClass* Z_Construct_UClass_ASword_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 // End Cross Module References
@@ -33,6 +35,10 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelCharacter() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SwordClass_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FClassPropertyParams NewProp_SwordClass;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BaseLookUpRate_MetaData[];
 #endif
@@ -64,6 +70,13 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelCharacter() {}
 		{ "ModuleRelativePath", "TimeTravelCharacter.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_SwordClass_MetaData[] = {
+		{ "Category", "Weapon" },
+		{ "ModuleRelativePath", "TimeTravelCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_SwordClass = { UE4CodeGen_Private::EPropertyClass::Class, "SwordClass", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0014000000010001, 1, nullptr, STRUCT_OFFSET(ATimeTravelCharacter, SwordClass), Z_Construct_UClass_ASword_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_SwordClass_MetaData, ARRAY_COUNT(Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_SwordClass_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_BaseLookUpRate_MetaData[] = {
 		{ "Category", "Camera" },
@@ -101,6 +114,7 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelCharacter() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_CameraBoom = { UE4CodeGen_Private::EPropertyClass::Object, "CameraBoom", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x00400000000a001d, 1, nullptr, STRUCT_OFFSET(ATimeTravelCharacter, CameraBoom), Z_Construct_UClass_USpringArmComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_CameraBoom_MetaData, ARRAY_COUNT(Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_CameraBoom_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ATimeTravelCharacter_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_SwordClass,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_BaseLookUpRate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_BaseTurnRate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_FollowCamera,
@@ -129,7 +143,7 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ATimeTravelCharacter, 2884683116);
+	IMPLEMENT_CLASS(ATimeTravelCharacter, 4246087325);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ATimeTravelCharacter(Z_Construct_UClass_ATimeTravelCharacter, &ATimeTravelCharacter::StaticClass, TEXT("/Script/TimeTravel"), TEXT("ATimeTravelCharacter"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ATimeTravelCharacter);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

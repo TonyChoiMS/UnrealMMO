@@ -8,6 +8,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Sword.h"
 
 //////////////////////////////////////////////////////////////////////////
 // ATimeTravelCharacter
@@ -45,6 +46,13 @@ ATimeTravelCharacter::ATimeTravelCharacter()
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
+}
+
+void ATimeTravelCharacter::BeginPlay()
+{
+	Super::BeginPlay();
+
+	SpawnDefaultInventory();
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -131,4 +139,13 @@ void ATimeTravelCharacter::MoveRight(float Value)
 		// add movement in that direction
 		AddMovementInput(Direction, Value);
 	}
+}
+
+void ATimeTravelCharacter::SpawnDefaultInventory()
+{
+	FActorSpawnParameters SpawnInfo;
+
+	ASword* DefaultWeapon = GetWorld()->SpawnActor<ASword>(SwordClass, SpawnInfo);
+
+	DefaultWeapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, "WeaponSocket");
 }

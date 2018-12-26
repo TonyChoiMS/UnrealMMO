@@ -18,19 +18,19 @@
 	"Launch": "$(EngineDir)/Binaries/Win64/UE4Editor.exe",
 	"BuildProducts": [
 		{
-			"Path": "$(ProjectDir)/Plugins/Climb/Binaries/Win64/UE4Editor-Climb-2507.dll",
+			"Path": "$(ProjectDir)/Plugins/Climb/Binaries/Win64/UE4Editor-Climb-5106.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/Climb/Binaries/Win64/UE4Editor-Climb-2507.pdb",
+			"Path": "$(ProjectDir)/Plugins/Climb/Binaries/Win64/UE4Editor-Climb-5106.pdb",
 			"Type": "SymbolFile"
 		},
 		{
-			"Path": "$(ProjectDir)/Binaries/Win64/UE4Editor-TimeTravel-2507.dll",
+			"Path": "$(ProjectDir)/Binaries/Win64/UE4Editor-TimeTravel-9565.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
-			"Path": "$(ProjectDir)/Binaries/Win64/UE4Editor-TimeTravel-2507.pdb",
+			"Path": "$(ProjectDir)/Binaries/Win64/UE4Editor-TimeTravel-9565.pdb",
 			"Type": "SymbolFile"
 		},
 		{
