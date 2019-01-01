@@ -25,4 +25,10 @@ public:
 
 	UPROPERTY(VisibleDefaultsOnly, Category = Weapon)
 		class USkeletalMeshComponent* SwordMesh;
+
+	virtual void NotifyActorBeginOverlap(AActor* OtherActor) override;
+
+private:
+	UPROPERTY(VisibleAnyWhere, Category = Weapon)
+		class UCapsuleComponent* SwordCollision;
 };

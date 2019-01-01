@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeSword() {}
 	TIMETRAVEL_API UClass* Z_Construct_UClass_ASword();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_TimeTravel();
+	ENGINE_API UClass* Z_Construct_UClass_UCapsuleComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USkeletalMeshComponent_NoRegister();
 // End Cross Module References
 	void ASword::StaticRegisterNativesASword()
@@ -32,6 +33,10 @@ void EmptyLinkFunctionForGeneratedCodeSword() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SwordCollision_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_SwordCollision;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SwordMesh_MetaData[];
 #endif
@@ -51,6 +56,14 @@ void EmptyLinkFunctionForGeneratedCodeSword() {}
 	};
 #endif
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASword_Statics::NewProp_SwordCollision_MetaData[] = {
+		{ "Category", "Weapon" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Sword.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASword_Statics::NewProp_SwordCollision = { UE4CodeGen_Private::EPropertyClass::Object, "SwordCollision", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x00400000000a0009, 1, nullptr, STRUCT_OFFSET(ASword, SwordCollision), Z_Construct_UClass_UCapsuleComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASword_Statics::NewProp_SwordCollision_MetaData, ARRAY_COUNT(Z_Construct_UClass_ASword_Statics::NewProp_SwordCollision_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASword_Statics::NewProp_SwordMesh_MetaData[] = {
 		{ "Category", "Weapon" },
 		{ "EditInline", "true" },
@@ -59,6 +72,7 @@ void EmptyLinkFunctionForGeneratedCodeSword() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASword_Statics::NewProp_SwordMesh = { UE4CodeGen_Private::EPropertyClass::Object, "SwordMesh", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x00100000000b0009, 1, nullptr, STRUCT_OFFSET(ASword, SwordMesh), Z_Construct_UClass_USkeletalMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASword_Statics::NewProp_SwordMesh_MetaData, ARRAY_COUNT(Z_Construct_UClass_ASword_Statics::NewProp_SwordMesh_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASword_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASword_Statics::NewProp_SwordCollision,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASword_Statics::NewProp_SwordMesh,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ASword_Statics::StaticCppClassTypeInfo = {
@@ -84,7 +98,7 @@ void EmptyLinkFunctionForGeneratedCodeSword() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ASword, 4007601773);
+	IMPLEMENT_CLASS(ASword, 3611773132);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ASword(Z_Construct_UClass_ASword, &ASword::StaticClass, TEXT("/Script/TimeTravel"), TEXT("ASword"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ASword);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

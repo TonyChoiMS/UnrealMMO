@@ -96,4 +96,14 @@
       <Filter>Source\TimeTravel</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\TimeTravel\RobotCharacter.h">
+      <Filter>Source\TimeTravel</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\TimeTravel\RobotCharacter.cpp">
+      <Filter>Source\TimeTravel</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>

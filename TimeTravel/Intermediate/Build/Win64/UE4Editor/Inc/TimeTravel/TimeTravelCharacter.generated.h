@@ -20,7 +20,7 @@ private: \
 	static void StaticRegisterNativesATimeTravelCharacter(); \
 	friend struct Z_Construct_UClass_ATimeTravelCharacter_Statics; \
 public: \
-	DECLARE_CLASS(ATimeTravelCharacter, ACharacter, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/TimeTravel"), NO_API) \
+	DECLARE_CLASS(ATimeTravelCharacter, ACharacter, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/TimeTravel"), NO_API) \
 	DECLARE_SERIALIZER(ATimeTravelCharacter)
 
 
@@ -29,7 +29,7 @@ private: \
 	static void StaticRegisterNativesATimeTravelCharacter(); \
 	friend struct Z_Construct_UClass_ATimeTravelCharacter_Statics; \
 public: \
-	DECLARE_CLASS(ATimeTravelCharacter, ACharacter, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/TimeTravel"), NO_API) \
+	DECLARE_CLASS(ATimeTravelCharacter, ACharacter, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/TimeTravel"), NO_API) \
 	DECLARE_SERIALIZER(ATimeTravelCharacter)
 
 

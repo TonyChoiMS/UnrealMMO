@@ -36,6 +36,14 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelCharacter() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MaxHP_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_MaxHP;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_PlayerHP_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_PlayerHP;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SwordClass_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FClassPropertyParams NewProp_SwordClass;
@@ -70,6 +78,20 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelCharacter() {}
 		{ "ModuleRelativePath", "TimeTravelCharacter.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_MaxHP_MetaData[] = {
+		{ "Category", "Health" },
+		{ "ModuleRelativePath", "TimeTravelCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_MaxHP = { UE4CodeGen_Private::EPropertyClass::Float, "MaxHP", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000004005, 1, nullptr, STRUCT_OFFSET(ATimeTravelCharacter, MaxHP), METADATA_PARAMS(Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_MaxHP_MetaData, ARRAY_COUNT(Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_MaxHP_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_PlayerHP_MetaData[] = {
+		{ "Category", "Health" },
+		{ "ModuleRelativePath", "TimeTravelCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_PlayerHP = { UE4CodeGen_Private::EPropertyClass::Float, "PlayerHP", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000000005, 1, nullptr, STRUCT_OFFSET(ATimeTravelCharacter, PlayerHP), METADATA_PARAMS(Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_PlayerHP_MetaData, ARRAY_COUNT(Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_PlayerHP_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_SwordClass_MetaData[] = {
 		{ "Category", "Weapon" },
@@ -114,6 +136,8 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelCharacter() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_CameraBoom = { UE4CodeGen_Private::EPropertyClass::Object, "CameraBoom", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x00400000000a001d, 1, nullptr, STRUCT_OFFSET(ATimeTravelCharacter, CameraBoom), Z_Construct_UClass_USpringArmComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_CameraBoom_MetaData, ARRAY_COUNT(Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_CameraBoom_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ATimeTravelCharacter_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_MaxHP,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_PlayerHP,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_SwordClass,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_BaseLookUpRate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_BaseTurnRate,
@@ -126,7 +150,7 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelCharacter() {}
 	const UE4CodeGen_Private::FClassParams Z_Construct_UClass_ATimeTravelCharacter_Statics::ClassParams = {
 		&ATimeTravelCharacter::StaticClass,
 		DependentSingletons, ARRAY_COUNT(DependentSingletons),
-		0x008000A0u,
+		0x008000A4u,
 		nullptr, 0,
 		Z_Construct_UClass_ATimeTravelCharacter_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UClass_ATimeTravelCharacter_Statics::PropPointers),
 		"Game",
@@ -143,7 +167,7 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ATimeTravelCharacter, 4246087325);
+	IMPLEMENT_CLASS(ATimeTravelCharacter, 1003023106);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ATimeTravelCharacter(Z_Construct_UClass_ATimeTravelCharacter, &ATimeTravelCharacter::StaticClass, TEXT("/Script/TimeTravel"), TEXT("ATimeTravelCharacter"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ATimeTravelCharacter);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

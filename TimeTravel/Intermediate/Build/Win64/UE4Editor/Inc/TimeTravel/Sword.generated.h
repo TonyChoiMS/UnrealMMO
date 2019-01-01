@@ -57,7 +57,10 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ASword); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ASword)
 
 
-#define TimeTravel_Source_TimeTravel_Sword_h_12_PRIVATE_PROPERTY_OFFSET
+#define TimeTravel_Source_TimeTravel_Sword_h_12_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__SwordCollision() { return STRUCT_OFFSET(ASword, SwordCollision); }
+
+
 #define TimeTravel_Source_TimeTravel_Sword_h_9_PROLOG
 #define TimeTravel_Source_TimeTravel_Sword_h_12_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

@@ -28,7 +28,7 @@ ATimeTravelCharacter::ATimeTravelCharacter()
 	bUseControllerRotationRoll = false;
 
 	// Configure character movement
-	GetCharacterMovement()->bOrientRotationToMovement = true; // Character moves in the direction of input...	
+	GetCharacterMovement()->bOrientRotationToMovement = false; // Character moves in the direction of input...	
 	GetCharacterMovement()->RotationRate = FRotator(0.0f, 540.0f, 0.0f); // ...at this rotation rate
 	GetCharacterMovement()->JumpZVelocity = 600.f;
 	GetCharacterMovement()->AirControl = 0.2f;
@@ -36,8 +36,8 @@ ATimeTravelCharacter::ATimeTravelCharacter()
 	// Create a camera boom (pulls in towards the player if there is a collision)
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
 	CameraBoom->SetupAttachment(RootComponent);
-	CameraBoom->TargetArmLength = 300.0f; // The camera follows at this distance behind the character	
-	CameraBoom->bUsePawnControlRotation = true; // Rotate the arm based on the controller
+	CameraBoom->TargetArmLength = 900.0f; // The camera follows at this distance behind the character	
+	CameraBoom->bUsePawnControlRotation = false; // Rotate the arm based on the controller
 
 	// Create a follow camera
 	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
@@ -46,6 +46,8 @@ ATimeTravelCharacter::ATimeTravelCharacter()
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
+
+	MaxHP = 100.f;
 }
 
 void ATimeTravelCharacter::BeginPlay()
@@ -53,6 +55,22 @@ void ATimeTravelCharacter::BeginPlay()
 	Super::BeginPlay();
 
 	SpawnDefaultInventory();
+
+	PlayerHP = MaxHP;
+}
+
+void ATimeTravelCharacter::Tick(float flDeltaTime)
+{
+	Super::Tick(flDeltaTime);
+
+	FRotator MakeRotator = this->GetActorRotation() + FRotator(m_flUpDownValue, m_flLeftRightValue, 0.0f);
+
+	if (m_flUpDownValue != 0.0f || m_flLeftRightValue != 0.0f)
+	{
+		Controller->SetControlRotation(MakeRotator);
+
+		AddMovementInput(GetActorForwardVector(), m_flUpDownValue);
+	}
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -65,16 +83,18 @@ void ATimeTravelCharacter::SetupPlayerInputComponent(class UInputComponent* Play
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 
-	PlayerInputComponent->BindAxis("MoveForward", this, &ATimeTravelCharacter::MoveForward);
-	PlayerInputComponent->BindAxis("MoveRight", this, &ATimeTravelCharacter::MoveRight);
+	/*PlayerInputComponent->BindAxis("MoveForward", this, &ATimeTravelCharacter::MoveForward);
+	PlayerInputComponent->BindAxis("MoveRight", this, &ATimeTravelCharacter::MoveRight);*/
+	PlayerInputComponent->BindAxis("UpDown", this, &ATimeTravelCharacter::UpDown);
+	PlayerInputComponent->BindAxis("LeftRight", this, &ATimeTravelCharacter::LeftRight);
 
 	// We have 2 versions of the rotation bindings to handle different kinds of devices differently
 	// "turn" handles devices that provide an absolute delta, such as a mouse.
 	// "turnrate" is for devices that we choose to treat as a rate of change, such as an analog joystick
-	PlayerInputComponent->BindAxis("Turn", this, &APawn::AddControllerYawInput);
+	/*PlayerInputComponent->BindAxis("Turn", this, &APawn::AddControllerYawInput);
 	PlayerInputComponent->BindAxis("TurnRate", this, &ATimeTravelCharacter::TurnAtRate);
 	PlayerInputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
-	PlayerInputComponent->BindAxis("LookUpRate", this, &ATimeTravelCharacter::LookUpAtRate);
+	PlayerInputComponent->BindAxis("LookUpRate", this, &ATimeTravelCharacter::LookUpAtRate);*/
 
 	// handle touch devices
 	PlayerInputComponent->BindTouch(IE_Pressed, this, &ATimeTravelCharacter::TouchStarted);
@@ -148,4 +168,14 @@ void ATimeTravelCharacter::SpawnDefaultInventory()
 	ASword* DefaultWeapon = GetWorld()->SpawnActor<ASword>(SwordClass, SpawnInfo);
 
 	DefaultWeapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, "WeaponSocket");
+}
+
+void ATimeTravelCharacter::UpDown(float flValue)
+{
+	m_flUpDownValue = flValue;
+}
+
+void ATimeTravelCharacter::LeftRight(float flValue)
+{
+	m_flLeftRightValue = flValue;
 }
