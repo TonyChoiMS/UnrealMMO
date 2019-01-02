@@ -59,7 +59,11 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ATimeTravelCharacter); \
 
 #define TimeTravel_Source_TimeTravel_TimeTravelCharacter_h_12_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__CameraBoom() { return STRUCT_OFFSET(ATimeTravelCharacter, CameraBoom); } \
-	FORCEINLINE static uint32 __PPO__FollowCamera() { return STRUCT_OFFSET(ATimeTravelCharacter, FollowCamera); }
+	FORCEINLINE static uint32 __PPO__FollowCamera() { return STRUCT_OFFSET(ATimeTravelCharacter, FollowCamera); } \
+	FORCEINLINE static uint32 __PPO__AttackAnim1() { return STRUCT_OFFSET(ATimeTravelCharacter, AttackAnim1); } \
+	FORCEINLINE static uint32 __PPO__AttackAnim2() { return STRUCT_OFFSET(ATimeTravelCharacter, AttackAnim2); } \
+	FORCEINLINE static uint32 __PPO__AttackAnim3() { return STRUCT_OFFSET(ATimeTravelCharacter, AttackAnim3); } \
+	FORCEINLINE static uint32 __PPO__AttackAnim4() { return STRUCT_OFFSET(ATimeTravelCharacter, AttackAnim4); }
 
 
 #define TimeTravel_Source_TimeTravel_TimeTravelCharacter_h_9_PROLOG

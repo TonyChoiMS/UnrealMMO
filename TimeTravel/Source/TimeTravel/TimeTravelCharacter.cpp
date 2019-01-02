@@ -48,6 +48,8 @@ ATimeTravelCharacter::ATimeTravelCharacter()
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
 
 	MaxHP = 100.f;
+
+	ComboNumber = 0.f;
 }
 
 void ATimeTravelCharacter::BeginPlay()
@@ -82,6 +84,8 @@ void ATimeTravelCharacter::SetupPlayerInputComponent(class UInputComponent* Play
 	check(PlayerInputComponent);
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
+
+	PlayerInputComponent->BindAction("Attack", IE_Pressed, this, &ATimeTravelCharacter::StartAttack);
 
 	/*PlayerInputComponent->BindAxis("MoveForward", this, &ATimeTravelCharacter::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &ATimeTravelCharacter::MoveRight);*/
@@ -178,4 +182,47 @@ void ATimeTravelCharacter::UpDown(float flValue)
 void ATimeTravelCharacter::LeftRight(float flValue)
 {
 	m_flLeftRightValue = flValue;
+}
+
+void ATimeTravelCharacter::StartAttack()
+{
+	FTimerHandle TimerHandle_StopAttack;
+
+	if (ComboNumber == 0)
+	{
+		float AnimDuration = PlayAnimMontage(AttackAnim1);
+		ComboNumber = 1;
+		GetWorldTimerManager().SetTimer(TimerHandle_StopAttack, this, &ATimeTravelCharacter::StopAttack, AnimDuration, false);
+	}
+	else if (ComboNumber == 1)
+	{
+		float AnimDuration = PlayAnimMontage(AttackAnim2);
+		ComboNumber = 2;
+		GetWorldTimerManager().SetTimer(TimerHandle_StopAttack, this, &ATimeTravelCharacter::StopAttack, AnimDuration, false);
+	}
+	else if (ComboNumber == 2)
+	{
+		float AnimDuration = PlayAnimMontage(AttackAnim3);
+		ComboNumber = 3;
+		GetWorldTimerManager().SetTimer(TimerHandle_StopAttack, this, &ATimeTravelCharacter::StopAttack, AnimDuration, false);
+	}
+	else if (ComboNumber == 3)
+	{
+		float AnimDuration = PlayAnimMontage(AttackAnim4);
+		ComboNumber = 0;
+		GetWorldTimerManager().SetTimer(TimerHandle_StopAttack, this, &ATimeTravelCharacter::StopAttack, AnimDuration, false);
+	}
+}
+
+void ATimeTravelCharacter::StopAttack()
+{
+	float IsAction1 = GetMesh()->AnimScriptInstance->Montage_GetPlayRate(AttackAnim1);
+	float IsAction2 = GetMesh()->AnimScriptInstance->Montage_GetPlayRate(AttackAnim2);
+	float IsAction3 = GetMesh()->AnimScriptInstance->Montage_GetPlayRate(AttackAnim3);
+	float IsAction4 = GetMesh()->AnimScriptInstance->Montage_GetPlayRate(AttackAnim4);
+
+	if (IsAction1 == 0 && IsAction2 == 0 && IsAction3 == 0 && IsAction4 == 0)
+	{
+		ComboNumber = 0;
+	}
 }

@@ -40,6 +40,12 @@ public:
 	UPROPERTY(config, EditAnyWhere, BlueprintReadWrite, Category = Health)
 		float MaxHP;
 
+	void StartAttack();
+
+	void StopAttack();
+
+	int32 ComboNumber;
+
 protected:
 
 	virtual void BeginPlay() override;
@@ -80,6 +86,18 @@ protected:
 	void UpDown(float flValue);
 
 	void LeftRight(float flValue);
+
+	UPROPERTY(EditDefaultsOnly, Category = Pawn)
+		UAnimMontage* AttackAnim1;
+
+	UPROPERTY(EditDefaultsOnly, Category = Pawn)
+		UAnimMontage* AttackAnim2;
+
+	UPROPERTY(EditDefaultsOnly, Category = Pawn)
+		UAnimMontage* AttackAnim3;
+
+	UPROPERTY(EditDefaultsOnly, Category = Pawn)
+		UAnimMontage* AttackAnim4;
 
 protected:
 	// APawn interface
