@@ -49,6 +49,5 @@ void ASword::NotifyActorBeginOverlap(AActor* OtherActor)
 
 		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Red, FString::FromInt(Bot->RobotHP));
 	}
-
 }
 

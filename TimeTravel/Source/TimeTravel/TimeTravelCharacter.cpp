@@ -190,38 +190,50 @@ void ATimeTravelCharacter::StartAttack()
 
 	if (ComboNumber == 0)
 	{
-		float AnimDuration = PlayAnimMontage(AttackAnim1);
+		m_flAnimDuration = PlayAnimMontage(AttackAnim1);
 		ComboNumber = 1;
-		GetWorldTimerManager().SetTimer(TimerHandle_StopAttack, this, &ATimeTravelCharacter::StopAttack, AnimDuration, false);
+		GetWorldTimerManager().SetTimer(TimerHandle_StopAttack, this, &ATimeTravelCharacter::StopAttack, m_flAnimDuration, false);
 	}
 	else if (ComboNumber == 1)
 	{
-		float AnimDuration = PlayAnimMontage(AttackAnim2);
+		if (m_flIsAction1 == 0)
+		{
+			m_flAnimDuration = PlayAnimMontage(AttackAnim2);
+		}
+		
 		ComboNumber = 2;
-		GetWorldTimerManager().SetTimer(TimerHandle_StopAttack, this, &ATimeTravelCharacter::StopAttack, AnimDuration, false);
+		GetWorldTimerManager().SetTimer(TimerHandle_StopAttack, this, &ATimeTravelCharacter::StopAttack, m_flAnimDuration, false);
 	}
 	else if (ComboNumber == 2)
 	{
-		float AnimDuration = PlayAnimMontage(AttackAnim3);
+		if (m_flIsAction2 == 0)
+		{
+			m_flAnimDuration = PlayAnimMontage(AttackAnim3);
+		}
+		
 		ComboNumber = 3;
-		GetWorldTimerManager().SetTimer(TimerHandle_StopAttack, this, &ATimeTravelCharacter::StopAttack, AnimDuration, false);
+		GetWorldTimerManager().SetTimer(TimerHandle_StopAttack, this, &ATimeTravelCharacter::StopAttack, m_flAnimDuration, false);
 	}
 	else if (ComboNumber == 3)
 	{
-		float AnimDuration = PlayAnimMontage(AttackAnim4);
+		if (m_flIsAction3 == 0)
+		{
+			m_flAnimDuration = PlayAnimMontage(AttackAnim4);
+		}
+		
 		ComboNumber = 0;
-		GetWorldTimerManager().SetTimer(TimerHandle_StopAttack, this, &ATimeTravelCharacter::StopAttack, AnimDuration, false);
+		GetWorldTimerManager().SetTimer(TimerHandle_StopAttack, this, &ATimeTravelCharacter::StopAttack, m_flAnimDuration, false);
 	}
 }
 
 void ATimeTravelCharacter::StopAttack()
 {
-	float IsAction1 = GetMesh()->AnimScriptInstance->Montage_GetPlayRate(AttackAnim1);
-	float IsAction2 = GetMesh()->AnimScriptInstance->Montage_GetPlayRate(AttackAnim2);
-	float IsAction3 = GetMesh()->AnimScriptInstance->Montage_GetPlayRate(AttackAnim3);
-	float IsAction4 = GetMesh()->AnimScriptInstance->Montage_GetPlayRate(AttackAnim4);
+	m_flIsAction1 = GetMesh()->AnimScriptInstance->Montage_GetPlayRate(AttackAnim1);
+	m_flIsAction2 = GetMesh()->AnimScriptInstance->Montage_GetPlayRate(AttackAnim2);
+	m_flIsAction3 = GetMesh()->AnimScriptInstance->Montage_GetPlayRate(AttackAnim3);
+	m_flIsAction4 = GetMesh()->AnimScriptInstance->Montage_GetPlayRate(AttackAnim4);
 
-	if (IsAction1 == 0 && IsAction2 == 0 && IsAction3 == 0 && IsAction4 == 0)
+	if (m_flIsAction1 == 0 && m_flIsAction2 == 0 && m_flIsAction3 == 0 && m_flIsAction4 == 0)
 	{
 		ComboNumber = 0;
 	}
