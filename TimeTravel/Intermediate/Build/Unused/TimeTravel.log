@@ -1,34 +1,22 @@
-﻿  Cleaning TimeTravelEditor Binaries...
-  Using 'git status' to determine working set for adaptive non-unity build (C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO).
-  Using 'git status' to determine working set for adaptive non-unity build (C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO).
-  Creating makefile for TimeTravelEditor (no existing makefile)
-  Performing full C++ include scan (no include cache file)
+﻿  Using 'git status' to determine working set for adaptive non-unity build (C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO).
+  Creating makefile for TimeTravelEditor (source directory changed)
   Using Visual Studio 2017 14.16.27023 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023) and Windows 10.0.17763.0 SDK (C:\Program Files (x86)\Windows Kits\10).
   Parsing headers for TimeTravelEditor
     Running UnrealHeaderTool "C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\TimeTravel.uproject" "C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Intermediate\Build\Win64\TimeTravelEditor\Development\TimeTravelEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
-  Reflection code generated for TimeTravelEditor in 7.7526734 seconds
-  Building 18 actions with 6 processes...
-    [1/18] PCLaunch.rc
-    [2/18] PCLaunch.rc
-    [3/18] SharedPCH.Engine.cpp
-    [4/18] TimeTravel.init.gen.cpp
-    [5/18] Sword.gen.cpp
-    [6/18] TimeTravelCharacter.gen.cpp
-    [7/18] RobotCharacter.gen.cpp
-    [8/18] TimeTravelGameMode.cpp
-    [9/18] Climb.cpp
-    [10/18] UE4Editor-Climb.lib
-       C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Plugins\Climb\Intermediate\Build\Win64\UE4Editor\Development\Climb\UE4Editor-Climb.lib 라이브러리 및 C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Plugins\Climb\Intermediate\Build\Win64\UE4Editor\Development\Climb\UE4Editor-Climb.exp 개체를 생성하고 있습니다.
-    [11/18] TimeTravelCharacter.cpp
-    [12/18] TimeTravelGameMode.gen.cpp
-    [13/18] UE4Editor-Climb.dll
-       C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Plugins\Climb\Intermediate\Build\Win64\UE4Editor\Development\Climb\UE4Editor-Climb.suppressed.lib 라이브러리 및 C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Plugins\Climb\Intermediate\Build\Win64\UE4Editor\Development\Climb\UE4Editor-Climb.suppressed.exp 개체를 생성하고 있습니다.
-    [14/18] Sword.cpp
-    [15/18] RobotCharacter.cpp
-    [16/18] TimeTravel.cpp
-    [17/18] UE4Editor-TimeTravel.lib
+  Reflection code generated for TimeTravelEditor in 7.1362653 seconds
+  Deleting old hot reload file: "C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Binaries\Win64\UE4Editor-TimeTravel-4544.dll".
+  Building 10 actions with 6 processes...
+    [1/10] TimeTravel.init.gen.cpp
+    [2/10] RobotCharacter.gen.cpp
+    [3/10] RobotAIController.gen.cpp
+    [4/10] RobotAIController.cpp
+    [5/10] Sword.cpp
+    [6/10] RobotCharacter.cpp
+    [7/10] BTTask_FindTargetPointLocation.cpp
+    [8/10] BTTask_FindNearLocation.cpp
+    [9/10] UE4Editor-TimeTravel.lib
        C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Intermediate\Build\Win64\UE4Editor\Development\TimeTravel\UE4Editor-TimeTravel.lib 라이브러리 및 C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Intermediate\Build\Win64\UE4Editor\Development\TimeTravel\UE4Editor-TimeTravel.exp 개체를 생성하고 있습니다.
-    [18/18] UE4Editor-TimeTravel.dll
+    [10/10] UE4Editor-TimeTravel.dll
        C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Intermediate\Build\Win64\UE4Editor\Development\TimeTravel\UE4Editor-TimeTravel.suppressed.lib 라이브러리 및 C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Intermediate\Build\Win64\UE4Editor\Development\TimeTravel\UE4Editor-TimeTravel.suppressed.exp 개체를 생성하고 있습니다.
   Deploying TimeTravelEditor Win64 Development...
-  Total build time: 47.29 seconds (Parallel executor: 31.34 seconds)
+  Total build time: 26.48 seconds (Parallel executor: 14.88 seconds)

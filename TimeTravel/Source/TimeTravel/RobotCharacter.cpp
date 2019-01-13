@@ -3,6 +3,9 @@
 #include "RobotCharacter.h"
 #include "Components/CapsuleComponent.h"
 #include "Engine.h"
+#include "Perception/PawnSensingComponent.h"
+#include "RobotAIController.h"
+#include "TimeTravelCharacter.h"
 
 // Sets default values
 ARobotCharacter::ARobotCharacter()
@@ -15,6 +18,10 @@ ARobotCharacter::ARobotCharacter()
 	static ConstructorHelpers::FObjectFinder<USkeletalMesh> RobotModel(TEXT("SkeletalMesh'/Game/TimeTravel/Robot/Enemy_Model.Enemy_Model'"));		// 에셋의 내용물을 가져올때 사용한다.
 	GetMesh()->SetSkeletalMesh(RobotModel.Object);
 
+	PawnSensingComp = CreateDefaultSubobject<UPawnSensingComponent>(TEXT("PawnSensingComp"));
+	PawnSensingComp->SetPeripheralVisionAngle(80.0f);			// 시야각 80도
+	PawnSensingComp->SightRadius = 800;							// 시야 범위 8m
+
 	RobotHP = 100;
 }
 
@@ -22,6 +29,11 @@ ARobotCharacter::ARobotCharacter()
 void ARobotCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+
+	if (PawnSensingComp)
+	{
+		PawnSensingComp->OnSeePawn.AddDynamic(this, &ARobotCharacter::OnSeePlayer);
+	}
 	
 }
 
@@ -30,6 +42,16 @@ void ARobotCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	if (bSensedTarget && (GetWorld()->TimeSeconds - LastSeenTime > 2.5f))
+	{
+		ARobotAIController* AIController = Cast<ARobotAIController>(GetController());
+
+		if (AIController)
+		{
+			bSensedTarget = false;
+			AIController->SetEnemy(nullptr);
+		}
+	}
 }
 
 // Called to bind functionality to input
@@ -49,5 +71,19 @@ float ARobotCharacter::TakeDamage(float flDamage, struct FDamageEvent const& Dam
 	}
 
 	return ActualDamage;
+}
+
+void ARobotCharacter::OnSeePlayer(APawn* Pawn)
+{
+	ARobotAIController* AIController = Cast<ARobotAIController>(GetController());
+	ATimeTravelCharacter* SensedPawn = Cast<ATimeTravelCharacter>(Pawn);
+
+	LastSeenTime = GetWorld()->GetTimeSeconds();
+	bSensedTarget = true;
+
+	if (AIController && SensedPawn->PlayerHP > 0)
+	{
+		AIController->SetEnemy(SensedPawn);
+	}
 }
 

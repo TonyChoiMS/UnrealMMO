@@ -19,6 +19,11 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	// 멤버함수는 UFUNCTION 매크로로 지정해줘야한다.
+	// 플레이어를 폰으로 가져오기 위해 파라미터에 폰을 지정
+	UFUNCTION()
+		void OnSeePlayer(APawn* Pawn);
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -30,4 +35,13 @@ public:
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = Health)
 		float RobotHP;
+
+	UPROPERTY(EditDefaultsOnly, Category = "AI")
+		class UBehaviorTree* BotBehavior;
+
+	UPROPERTY(VisibleAnywhere, Category = "AI")
+		class UPawnSensingComponent* PawnSensingComp;
+
+	float LastSeenTime;
+	bool bSensedTarget;
 };

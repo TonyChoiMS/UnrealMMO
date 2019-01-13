@@ -17,9 +17,51 @@ void EmptyLinkFunctionForGeneratedCodeRobotCharacter() {}
 	TIMETRAVEL_API UClass* Z_Construct_UClass_ARobotCharacter();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	UPackage* Z_Construct_UPackage__Script_TimeTravel();
+	TIMETRAVEL_API UFunction* Z_Construct_UFunction_ARobotCharacter_OnSeePlayer();
+	ENGINE_API UClass* Z_Construct_UClass_APawn_NoRegister();
+	AIMODULE_API UClass* Z_Construct_UClass_UPawnSensingComponent_NoRegister();
+	AIMODULE_API UClass* Z_Construct_UClass_UBehaviorTree_NoRegister();
 // End Cross Module References
 	void ARobotCharacter::StaticRegisterNativesARobotCharacter()
 	{
+		UClass* Class = ARobotCharacter::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "OnSeePlayer", &ARobotCharacter::execOnSeePlayer },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_ARobotCharacter_OnSeePlayer_Statics
+	{
+		struct RobotCharacter_eventOnSeePlayer_Parms
+		{
+			APawn* Pawn;
+		};
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Pawn;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ARobotCharacter_OnSeePlayer_Statics::NewProp_Pawn = { UE4CodeGen_Private::EPropertyClass::Object, "Pawn", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000000080, 1, nullptr, STRUCT_OFFSET(RobotCharacter_eventOnSeePlayer_Parms, Pawn), Z_Construct_UClass_APawn_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ARobotCharacter_OnSeePlayer_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ARobotCharacter_OnSeePlayer_Statics::NewProp_Pawn,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ARobotCharacter_OnSeePlayer_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "RobotCharacter.h" },
+		{ "ToolTip", "?????\xd4\xbc??? UFUNCTION ??\xc5\xa9?\xce\xb7? ???????????\xd1\xb4?.\n?\xc3\xb7??\xcc\xbe\xee\xb8\xa6 ?????? ???????? ???? ?\xc4\xb6????\xcd\xbf? ???? ????" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ARobotCharacter_OnSeePlayer_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ARobotCharacter, "OnSeePlayer", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x00080401, sizeof(RobotCharacter_eventOnSeePlayer_Parms), Z_Construct_UFunction_ARobotCharacter_OnSeePlayer_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_ARobotCharacter_OnSeePlayer_Statics::PropPointers), 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ARobotCharacter_OnSeePlayer_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_ARobotCharacter_OnSeePlayer_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ARobotCharacter_OnSeePlayer()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ARobotCharacter_OnSeePlayer_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	UClass* Z_Construct_UClass_ARobotCharacter_NoRegister()
 	{
@@ -28,9 +70,18 @@ void EmptyLinkFunctionForGeneratedCodeRobotCharacter() {}
 	struct Z_Construct_UClass_ARobotCharacter_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_PawnSensingComp_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_PawnSensingComp;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BotBehavior_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_BotBehavior;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_RobotHP_MetaData[];
 #endif
@@ -43,6 +94,9 @@ void EmptyLinkFunctionForGeneratedCodeRobotCharacter() {}
 		(UObject* (*)())Z_Construct_UClass_ACharacter,
 		(UObject* (*)())Z_Construct_UPackage__Script_TimeTravel,
 	};
+	const FClassFunctionLinkInfo Z_Construct_UClass_ARobotCharacter_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_ARobotCharacter_OnSeePlayer, "OnSeePlayer" }, // 376142459
+	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ARobotCharacter_Statics::Class_MetaDataParams[] = {
 		{ "HideCategories", "Navigation" },
@@ -50,6 +104,21 @@ void EmptyLinkFunctionForGeneratedCodeRobotCharacter() {}
 		{ "ModuleRelativePath", "RobotCharacter.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ARobotCharacter_Statics::NewProp_PawnSensingComp_MetaData[] = {
+		{ "Category", "AI" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "RobotCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ARobotCharacter_Statics::NewProp_PawnSensingComp = { UE4CodeGen_Private::EPropertyClass::Object, "PawnSensingComp", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x00100000000a0009, 1, nullptr, STRUCT_OFFSET(ARobotCharacter, PawnSensingComp), Z_Construct_UClass_UPawnSensingComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ARobotCharacter_Statics::NewProp_PawnSensingComp_MetaData, ARRAY_COUNT(Z_Construct_UClass_ARobotCharacter_Statics::NewProp_PawnSensingComp_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ARobotCharacter_Statics::NewProp_BotBehavior_MetaData[] = {
+		{ "Category", "AI" },
+		{ "ModuleRelativePath", "RobotCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ARobotCharacter_Statics::NewProp_BotBehavior = { UE4CodeGen_Private::EPropertyClass::Object, "BotBehavior", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000010001, 1, nullptr, STRUCT_OFFSET(ARobotCharacter, BotBehavior), Z_Construct_UClass_UBehaviorTree_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ARobotCharacter_Statics::NewProp_BotBehavior_MetaData, ARRAY_COUNT(Z_Construct_UClass_ARobotCharacter_Statics::NewProp_BotBehavior_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ARobotCharacter_Statics::NewProp_RobotHP_MetaData[] = {
 		{ "Category", "Health" },
@@ -59,6 +128,8 @@ void EmptyLinkFunctionForGeneratedCodeRobotCharacter() {}
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ARobotCharacter_Statics::NewProp_RobotHP = { UE4CodeGen_Private::EPropertyClass::Float, "RobotHP", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000000005, 1, nullptr, STRUCT_OFFSET(ARobotCharacter, RobotHP), METADATA_PARAMS(Z_Construct_UClass_ARobotCharacter_Statics::NewProp_RobotHP_MetaData, ARRAY_COUNT(Z_Construct_UClass_ARobotCharacter_Statics::NewProp_RobotHP_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ARobotCharacter_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARobotCharacter_Statics::NewProp_PawnSensingComp,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARobotCharacter_Statics::NewProp_BotBehavior,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARobotCharacter_Statics::NewProp_RobotHP,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ARobotCharacter_Statics::StaticCppClassTypeInfo = {
@@ -68,7 +139,7 @@ void EmptyLinkFunctionForGeneratedCodeRobotCharacter() {}
 		&ARobotCharacter::StaticClass,
 		DependentSingletons, ARRAY_COUNT(DependentSingletons),
 		0x009000A0u,
-		nullptr, 0,
+		FuncInfo, ARRAY_COUNT(FuncInfo),
 		Z_Construct_UClass_ARobotCharacter_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UClass_ARobotCharacter_Statics::PropPointers),
 		nullptr,
 		&StaticCppClassTypeInfo,
@@ -84,7 +155,7 @@ void EmptyLinkFunctionForGeneratedCodeRobotCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ARobotCharacter, 2074174110);
+	IMPLEMENT_CLASS(ARobotCharacter, 2438768465);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ARobotCharacter(Z_Construct_UClass_ARobotCharacter, &ARobotCharacter::StaticClass, TEXT("/Script/TimeTravel"), TEXT("ARobotCharacter"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ARobotCharacter);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
