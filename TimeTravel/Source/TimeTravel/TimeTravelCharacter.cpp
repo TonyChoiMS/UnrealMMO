@@ -172,6 +172,7 @@ void ATimeTravelCharacter::SpawnDefaultInventory()
 	ASword* DefaultWeapon = GetWorld()->SpawnActor<ASword>(SwordClass, SpawnInfo);
 
 	DefaultWeapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, "WeaponSocket");
+	DefaultWeapon->SetOwningPawn(this);
 }
 
 void ATimeTravelCharacter::UpDown(float flValue)
@@ -188,52 +189,55 @@ void ATimeTravelCharacter::StartAttack()
 {
 	FTimerHandle TimerHandle_StopAttack;
 
-	if (ComboNumber == 0)
+	if (PlayerHP > 0)
 	{
-		m_flAnimDuration = PlayAnimMontage(AttackAnim1);
-		ComboNumber = 1;
-		GetWorldTimerManager().SetTimer(TimerHandle_StopAttack, this, &ATimeTravelCharacter::StopAttack, m_flAnimDuration, false);
-	}
-	else if (ComboNumber == 1)
-	{
-		if (m_flIsAction1 == 0)
+		if (ComboNumber == 0)
 		{
-			m_flAnimDuration = PlayAnimMontage(AttackAnim2);
+			AnimDuration = PlayAnimMontage(AttackAnim1);
+			ComboNumber = 1;
+			GetWorldTimerManager().SetTimer(TimerHandle_StopAttack, this, &ATimeTravelCharacter::StopAttack, AnimDuration, false);
 		}
-		
-		ComboNumber = 2;
-		GetWorldTimerManager().SetTimer(TimerHandle_StopAttack, this, &ATimeTravelCharacter::StopAttack, m_flAnimDuration, false);
-	}
-	else if (ComboNumber == 2)
-	{
-		if (m_flIsAction2 == 0)
+		else if (ComboNumber == 1)
 		{
-			m_flAnimDuration = PlayAnimMontage(AttackAnim3);
+			if (IsAction1 == 0)
+			{
+				AnimDuration = PlayAnimMontage(AttackAnim2);
+			}
+
+			ComboNumber = 2;
+			GetWorldTimerManager().SetTimer(TimerHandle_StopAttack, this, &ATimeTravelCharacter::StopAttack, AnimDuration, false);
 		}
-		
-		ComboNumber = 3;
-		GetWorldTimerManager().SetTimer(TimerHandle_StopAttack, this, &ATimeTravelCharacter::StopAttack, m_flAnimDuration, false);
-	}
-	else if (ComboNumber == 3)
-	{
-		if (m_flIsAction3 == 0)
+		else if (ComboNumber == 2)
 		{
-			m_flAnimDuration = PlayAnimMontage(AttackAnim4);
+			if (IsAction2 == 0)
+			{
+				AnimDuration = PlayAnimMontage(AttackAnim3);
+			}
+
+			ComboNumber = 3;
+			GetWorldTimerManager().SetTimer(TimerHandle_StopAttack, this, &ATimeTravelCharacter::StopAttack, AnimDuration, false);
 		}
-		
-		ComboNumber = 0;
-		GetWorldTimerManager().SetTimer(TimerHandle_StopAttack, this, &ATimeTravelCharacter::StopAttack, m_flAnimDuration, false);
+		else if (ComboNumber == 3)
+		{
+			if (IsAction3 == 0)
+			{
+				AnimDuration = PlayAnimMontage(AttackAnim4);
+			}
+
+			ComboNumber = 0;
+			GetWorldTimerManager().SetTimer(TimerHandle_StopAttack, this, &ATimeTravelCharacter::StopAttack, AnimDuration, false);
+		}
 	}
 }
 
 void ATimeTravelCharacter::StopAttack()
 {
-	m_flIsAction1 = GetMesh()->AnimScriptInstance->Montage_GetPlayRate(AttackAnim1);
-	m_flIsAction2 = GetMesh()->AnimScriptInstance->Montage_GetPlayRate(AttackAnim2);
-	m_flIsAction3 = GetMesh()->AnimScriptInstance->Montage_GetPlayRate(AttackAnim3);
-	m_flIsAction4 = GetMesh()->AnimScriptInstance->Montage_GetPlayRate(AttackAnim4);
+	IsAction1 = GetMesh()->AnimScriptInstance->Montage_GetPlayRate(AttackAnim1);
+	IsAction2 = GetMesh()->AnimScriptInstance->Montage_GetPlayRate(AttackAnim2);
+	IsAction3 = GetMesh()->AnimScriptInstance->Montage_GetPlayRate(AttackAnim3);
+	IsAction4 = GetMesh()->AnimScriptInstance->Montage_GetPlayRate(AttackAnim4);
 
-	if (m_flIsAction1 == 0 && m_flIsAction2 == 0 && m_flIsAction3 == 0 && m_flIsAction4 == 0)
+	if (IsAction1 == 0 && IsAction2 == 0 && IsAction3 == 0 && IsAction4 == 0)
 	{
 		ComboNumber = 0;
 	}

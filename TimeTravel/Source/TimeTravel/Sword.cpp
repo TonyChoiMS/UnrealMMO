@@ -37,14 +37,26 @@ void ASword::Tick(float DeltaTime)
 
 }
 
+void ASword::SetOwningPawn(ATimeTravelCharacter* NewOwner)
+{
+	if (MyPawn != NewOwner)
+	{
+		MyPawn = NewOwner;
+	}
+}
+
 void ASword::NotifyActorBeginOverlap(AActor* OtherActor)
 {
 	Super::NotifyActorBeginOverlap(OtherActor);
 
 	if (OtherActor->IsA(AActor::StaticClass()))
 	{
-		UGameplayStatics::ApplyDamage(OtherActor, 10.0f, NULL, this, UDamageType::StaticClass());		// 데미지를 입히는 대상, 데미지의 양, 데미지를 입히는 컨트롤러, 데미지를 줄 액터, 데미지 타입
-
+		// 해당 애니메이션이 실행중이면 1, 애니메이션이 실행중이지 않다면 0
+		if (MyPawn->IsAction1 == 1 || MyPawn->IsAction2 == 1 || MyPawn->IsAction3 == 1 || MyPawn->IsAction4 == 1)
+		{
+			UGameplayStatics::ApplyDamage(OtherActor, 10.0f, NULL, this, UDamageType::StaticClass());		// 데미지를 입히는 대상, 데미지의 양, 데미지를 입히는 컨트롤러, 데미지를 줄 액터, 데미지 타입
+		}
+		
 		ARobotCharacter* Bot = Cast<ARobotCharacter>(OtherActor);
 
 		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Red, FString::FromInt(Bot->RobotHP));

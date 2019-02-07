@@ -24,6 +24,9 @@ protected:
 	UFUNCTION()
 		void OnSeePlayer(APawn* Pawn);
 
+	UFUNCTION()
+		void OnMeleeCompBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -42,6 +45,24 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = "AI")
 		class UPawnSensingComponent* PawnSensingComp;
 
+	UPROPERTY(EditDefaultsOnly, Category = "AI")
+		UAnimMontage* MeleeAnimMontage;
+
+	UPROPERTY(EditDefaultsOnly, Category = "AI")
+		UAnimMontage* TakeHitAnimMontage;
+
+	UPROPERTY(VisibleAnywhere, Category = "AI")
+		UCapsuleComponent* MeleeCollisionComp;
+
 	float LastSeenTime;
 	bool bSensedTarget;
+
+	UFUNCTION(BlueprintCallable, Category = "AI")
+		void ExecuteMeleeDamage(AActor* HitActor);
+
+	virtual void OnHit(float DamageTaken, struct FDamageEvent const& DamageEvent, class APawn* PawnInstigator, class AActor* DamageCauser);
+
+	virtual void Die(float KillingDamage, struct FDamageEvent const& DamageEvent, AController* Killer, AActor* DamageCauser);
+
+	void SetRagdollPhysics();
 };

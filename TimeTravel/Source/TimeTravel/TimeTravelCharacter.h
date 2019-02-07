@@ -46,6 +46,11 @@ public:
 
 	int32 ComboNumber;
 
+	float IsAction1;
+	float IsAction2;
+	float IsAction3;
+	float IsAction4;
+
 
 protected:
 
@@ -100,12 +105,7 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = Pawn)
 		UAnimMontage* AttackAnim4;
 
-
-	float m_flAnimDuration;
-	float m_flIsAction1;
-	float m_flIsAction2;
-	float m_flIsAction3;
-	float m_flIsAction4;
+	float AnimDuration;
 
 protected:
 	// APawn interface

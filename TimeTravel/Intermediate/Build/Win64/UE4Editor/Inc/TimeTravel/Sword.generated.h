@@ -13,9 +13,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TIMETRAVEL_Sword_generated_h
 
-#define TimeTravel_Source_TimeTravel_Sword_h_12_RPC_WRAPPERS
-#define TimeTravel_Source_TimeTravel_Sword_h_12_RPC_WRAPPERS_NO_PURE_DECLS
-#define TimeTravel_Source_TimeTravel_Sword_h_12_INCLASS_NO_PURE_DECLS \
+#define TimeTravel_Source_TimeTravel_Sword_h_13_RPC_WRAPPERS
+#define TimeTravel_Source_TimeTravel_Sword_h_13_RPC_WRAPPERS_NO_PURE_DECLS
+#define TimeTravel_Source_TimeTravel_Sword_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesASword(); \
 	friend struct Z_Construct_UClass_ASword_Statics; \
@@ -24,7 +24,7 @@ public: \
 	DECLARE_SERIALIZER(ASword)
 
 
-#define TimeTravel_Source_TimeTravel_Sword_h_12_INCLASS \
+#define TimeTravel_Source_TimeTravel_Sword_h_13_INCLASS \
 private: \
 	static void StaticRegisterNativesASword(); \
 	friend struct Z_Construct_UClass_ASword_Statics; \
@@ -33,7 +33,7 @@ public: \
 	DECLARE_SERIALIZER(ASword)
 
 
-#define TimeTravel_Source_TimeTravel_Sword_h_12_STANDARD_CONSTRUCTORS \
+#define TimeTravel_Source_TimeTravel_Sword_h_13_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ASword(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ASword) \
@@ -46,7 +46,7 @@ private: \
 public:
 
 
-#define TimeTravel_Source_TimeTravel_Sword_h_12_ENHANCED_CONSTRUCTORS \
+#define TimeTravel_Source_TimeTravel_Sword_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ASword(ASword&&); \
@@ -57,29 +57,29 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ASword); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ASword)
 
 
-#define TimeTravel_Source_TimeTravel_Sword_h_12_PRIVATE_PROPERTY_OFFSET \
+#define TimeTravel_Source_TimeTravel_Sword_h_13_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__SwordCollision() { return STRUCT_OFFSET(ASword, SwordCollision); }
 
 
-#define TimeTravel_Source_TimeTravel_Sword_h_9_PROLOG
-#define TimeTravel_Source_TimeTravel_Sword_h_12_GENERATED_BODY_LEGACY \
+#define TimeTravel_Source_TimeTravel_Sword_h_10_PROLOG
+#define TimeTravel_Source_TimeTravel_Sword_h_13_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	TimeTravel_Source_TimeTravel_Sword_h_12_PRIVATE_PROPERTY_OFFSET \
-	TimeTravel_Source_TimeTravel_Sword_h_12_RPC_WRAPPERS \
-	TimeTravel_Source_TimeTravel_Sword_h_12_INCLASS \
-	TimeTravel_Source_TimeTravel_Sword_h_12_STANDARD_CONSTRUCTORS \
+	TimeTravel_Source_TimeTravel_Sword_h_13_PRIVATE_PROPERTY_OFFSET \
+	TimeTravel_Source_TimeTravel_Sword_h_13_RPC_WRAPPERS \
+	TimeTravel_Source_TimeTravel_Sword_h_13_INCLASS \
+	TimeTravel_Source_TimeTravel_Sword_h_13_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define TimeTravel_Source_TimeTravel_Sword_h_12_GENERATED_BODY \
+#define TimeTravel_Source_TimeTravel_Sword_h_13_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	TimeTravel_Source_TimeTravel_Sword_h_12_PRIVATE_PROPERTY_OFFSET \
-	TimeTravel_Source_TimeTravel_Sword_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
-	TimeTravel_Source_TimeTravel_Sword_h_12_INCLASS_NO_PURE_DECLS \
-	TimeTravel_Source_TimeTravel_Sword_h_12_ENHANCED_CONSTRUCTORS \
+	TimeTravel_Source_TimeTravel_Sword_h_13_PRIVATE_PROPERTY_OFFSET \
+	TimeTravel_Source_TimeTravel_Sword_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	TimeTravel_Source_TimeTravel_Sword_h_13_INCLASS_NO_PURE_DECLS \
+	TimeTravel_Source_TimeTravel_Sword_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

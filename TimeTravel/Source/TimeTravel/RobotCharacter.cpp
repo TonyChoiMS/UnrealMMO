@@ -22,6 +22,13 @@ ARobotCharacter::ARobotCharacter()
 	PawnSensingComp->SetPeripheralVisionAngle(80.0f);			// 시야각 80도
 	PawnSensingComp->SightRadius = 800;							// 시야 범위 8m
 
+	MeleeCollisionComp = CreateDefaultSubobject<UCapsuleComponent>(TEXT("MeleeCollision"));
+	MeleeCollisionComp->SetRelativeLocation(FVector(45, 0, 25));
+	MeleeCollisionComp->InitCapsuleSize(30.f, 70.f);
+	MeleeCollisionComp->SetCollisionResponseToAllChannels(ECR_Ignore);
+	MeleeCollisionComp->SetCollisionResponseToChannel(ECC_GameTraceChannel1, ECR_Overlap);
+	MeleeCollisionComp->SetupAttachment(GetCapsuleComponent());
+
 	RobotHP = 100;
 }
 
@@ -34,7 +41,11 @@ void ARobotCharacter::BeginPlay()
 	{
 		PawnSensingComp->OnSeePawn.AddDynamic(this, &ARobotCharacter::OnSeePlayer);
 	}
-	
+
+	if (MeleeCollisionComp)
+	{
+		MeleeCollisionComp->OnComponentBeginOverlap.AddDynamic(this, &ARobotCharacter::OnMeleeCompBeginOverlap);
+	}
 }
 
 // Called every frame
@@ -49,7 +60,7 @@ void ARobotCharacter::Tick(float DeltaTime)
 		if (AIController)
 		{
 			bSensedTarget = false;
-			AIController->SetEnemy(nullptr);
+			AIController->SetEnemy(nullptr); 
 		}
 	}
 }
@@ -68,7 +79,22 @@ float ARobotCharacter::TakeDamage(float flDamage, struct FDamageEvent const& Dam
 	if (ActualDamage > 0.f)
 	{
 		RobotHP -= ActualDamage;
+
+		if (RobotHP <= 0)
+		{
+			Die(ActualDamage, DamageEvent, EventInstigator, DamageCauser);
+		}
+		else
+		{
+			OnHit(ActualDamage, DamageEvent, EventInstigator ? EventInstigator->GetPawn() : NULL, DamageCauser);
+		}
 	}
+
+	if (RobotHP <= 0.f)
+	{
+		return 0.f;
+	}
+
 
 	return ActualDamage;
 }
@@ -87,3 +113,75 @@ void ARobotCharacter::OnSeePlayer(APawn* Pawn)
 	}
 }
 
+void ARobotCharacter::OnMeleeCompBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
+{
+	ExecuteMeleeDamage(OtherActor);
+}
+
+void ARobotCharacter::ExecuteMeleeDamage(AActor* HitActor)
+{
+	ATimeTravelCharacter* PlayerPawn = Cast<ATimeTravelCharacter>(HitActor);
+
+	if (HitActor && HitActor != this && PlayerPawn->PlayerHP > 0)
+	{
+		if (PlayerPawn && RobotHP > 0)
+		{
+			PlayAnimMontage(MeleeAnimMontage);
+
+			FPointDamageEvent DmgEvent;
+
+			HitActor->TakeDamage(50, DmgEvent, GetController(), this);
+		}
+	}
+}
+
+void ARobotCharacter::OnHit(float DamageTaken, struct FDamageEvent const& DamageEvent, class APawn* PawnInstigator, class AActor* DamageCauser)
+{
+	float bMeleeDuring = GetMesh()->AnimScriptInstance->Montage_GetPlayRate(MeleeAnimMontage);
+
+	if (bMeleeDuring == 0)
+	{
+		PlayAnimMontage(TakeHitAnimMontage);
+
+		if (DamageTaken > 0.f)
+		{
+			ApplyDamageMomentum(DamageTaken, DamageEvent, PawnInstigator, DamageCauser);
+		}
+	}
+}
+
+void ARobotCharacter::Die(float KillingDamage, struct FDamageEvent const& DamageEvent, AController* Killer, AActor* DamageCauser)
+{
+	GetWorldTimerManager().ClearAllTimersForObject(this);
+
+	if (GetCapsuleComponent())
+	{
+		GetCapsuleComponent()->BodyInstance.SetCollisionEnabled(ECollisionEnabled::NoCollision);
+		GetCapsuleComponent()->SetCollisionResponseToAllChannels(ECR_Ignore);
+	}
+
+	if (GetCharacterMovement())
+	{
+		GetCharacterMovement()->StopMovementImmediately();
+		GetCharacterMovement()->DisableMovement();
+	}
+
+	if (Controller != NULL)
+	{
+		Controller->UnPossess();
+	}
+
+	PlayAnimMontage(TakeHitAnimMontage);
+
+	SetRagdollPhysics();
+}
+
+void ARobotCharacter::SetRagdollPhysics()
+{
+	GetMesh()->SetAllBodiesSimulatePhysics(true);
+	GetMesh()->SetSimulatePhysics(true);
+	GetMesh()->WakeAllRigidBodies();
+	GetMesh()->bBlendPhysics = true;
+
+	SetLifeSpan(3.5f);
+}

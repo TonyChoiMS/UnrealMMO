@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "TimeTravelCharacter.h"
 #include "Sword.generated.h"
 
 UCLASS()
@@ -19,6 +20,8 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	class ATimeTravelCharacter* MyPawn;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -27,6 +30,8 @@ public:
 		class USkeletalMeshComponent* SwordMesh;
 
 	virtual void NotifyActorBeginOverlap(AActor* OtherActor) override;
+
+	void SetOwningPawn(ATimeTravelCharacter* NewOwner);
 
 private:
 	UPROPERTY(VisibleAnyWhere, Category = Weapon)

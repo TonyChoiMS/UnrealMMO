@@ -8,6 +8,9 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
+class UPrimitiveComponent;
+struct FHitResult;
 class APawn;
 #ifdef TIMETRAVEL_RobotCharacter_generated_h
 #error "RobotCharacter.generated.h already included, missing '#pragma once' in RobotCharacter.h"
@@ -15,6 +18,29 @@ class APawn;
 #define TIMETRAVEL_RobotCharacter_generated_h
 
 #define TimeTravel_Source_TimeTravel_RobotCharacter_h_12_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execExecuteMeleeDamage) \
+	{ \
+		P_GET_OBJECT(AActor,Z_Param_HitActor); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->ExecuteMeleeDamage(Z_Param_HitActor); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOnMeleeCompBeginOverlap) \
+	{ \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OverlappedComponent); \
+		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp); \
+		P_GET_PROPERTY(UIntProperty,Z_Param_OtherBodyIndex); \
+		P_GET_UBOOL(Z_Param_bFromSweep); \
+		P_GET_STRUCT_REF(FHitResult,Z_Param_Out_SweepResult); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnMeleeCompBeginOverlap(Z_Param_OverlappedComponent,Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_Out_SweepResult); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execOnSeePlayer) \
 	{ \
@@ -27,6 +53,29 @@ class APawn;
 
 
 #define TimeTravel_Source_TimeTravel_RobotCharacter_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execExecuteMeleeDamage) \
+	{ \
+		P_GET_OBJECT(AActor,Z_Param_HitActor); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->ExecuteMeleeDamage(Z_Param_HitActor); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOnMeleeCompBeginOverlap) \
+	{ \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OverlappedComponent); \
+		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp); \
+		P_GET_PROPERTY(UIntProperty,Z_Param_OtherBodyIndex); \
+		P_GET_UBOOL(Z_Param_bFromSweep); \
+		P_GET_STRUCT_REF(FHitResult,Z_Param_Out_SweepResult); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->OnMeleeCompBeginOverlap(Z_Param_OverlappedComponent,Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_Out_SweepResult); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execOnSeePlayer) \
 	{ \
