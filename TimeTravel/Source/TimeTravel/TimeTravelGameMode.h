@@ -13,6 +13,12 @@ class ATimeTravelGameMode : public AGameModeBase
 
 public:
 	ATimeTravelGameMode();
+
+	UPROPERTY(EditDefaultsOnly, Category = "Sound")
+		class UAudioComponent* AmbientAudioComp;
+
+protected:
+	virtual void BeginPlay() override;
 };
 
 

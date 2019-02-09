@@ -3,6 +3,7 @@
 #include "TimeTravelGameMode.h"
 #include "TimeTravelCharacter.h"
 #include "UObject/ConstructorHelpers.h"
+#include "Engine.h"
 
 ATimeTravelGameMode::ATimeTravelGameMode()
 {
@@ -12,4 +13,21 @@ ATimeTravelGameMode::ATimeTravelGameMode()
 	{
 		DefaultPawnClass = PlayerPawnBPClass.Class;
 	}
+
+	static ConstructorHelpers::FObjectFinder<USoundCue> SoundAmbient(TEXT("SoundCue'/Game/TimeTravel/Sounds/AmbientSoundCue.AmbientSoundCue'"));
+	AmbientAudioComp = CreateDefaultSubobject<UAudioComponent>(TEXT("AmbientAudioComp"));
+	AmbientAudioComp->SetupAttachment(RootComponent);
+	AmbientAudioComp->SetRelativeLocation(FVector(0.0f, 0.0f, -60.f));
+
+	if (SoundAmbient.Object->IsValidLowLevelFast())
+	{
+		AmbientAudioComp->SetSound(SoundAmbient.Object);
+	}
+}
+
+void ATimeTravelGameMode::BeginPlay()
+{
+	Super::BeginPlay();
+
+	AmbientAudioComp->Play();
 }

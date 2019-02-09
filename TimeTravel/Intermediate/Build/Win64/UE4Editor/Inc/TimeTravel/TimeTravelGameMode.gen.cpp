@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelGameMode() {}
 	TIMETRAVEL_API UClass* Z_Construct_UClass_ATimeTravelGameMode();
 	ENGINE_API UClass* Z_Construct_UClass_AGameModeBase();
 	UPackage* Z_Construct_UPackage__Script_TimeTravel();
+	ENGINE_API UClass* Z_Construct_UClass_UAudioComponent_NoRegister();
 // End Cross Module References
 	void ATimeTravelGameMode::StaticRegisterNativesATimeTravelGameMode()
 	{
@@ -31,6 +32,11 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelGameMode() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AmbientAudioComp_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_AmbientAudioComp;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -46,6 +52,17 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelGameMode() {}
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATimeTravelGameMode_Statics::NewProp_AmbientAudioComp_MetaData[] = {
+		{ "Category", "Sound" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "TimeTravelGameMode.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATimeTravelGameMode_Statics::NewProp_AmbientAudioComp = { UE4CodeGen_Private::EPropertyClass::Object, "AmbientAudioComp", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000090009, 1, nullptr, STRUCT_OFFSET(ATimeTravelGameMode, AmbientAudioComp), Z_Construct_UClass_UAudioComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATimeTravelGameMode_Statics::NewProp_AmbientAudioComp_MetaData, ARRAY_COUNT(Z_Construct_UClass_ATimeTravelGameMode_Statics::NewProp_AmbientAudioComp_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ATimeTravelGameMode_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATimeTravelGameMode_Statics::NewProp_AmbientAudioComp,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ATimeTravelGameMode_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ATimeTravelGameMode>::IsAbstract,
 	};
@@ -54,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelGameMode() {}
 		DependentSingletons, ARRAY_COUNT(DependentSingletons),
 		0x008802A8u,
 		nullptr, 0,
-		nullptr, 0,
+		Z_Construct_UClass_ATimeTravelGameMode_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UClass_ATimeTravelGameMode_Statics::PropPointers),
 		nullptr,
 		&StaticCppClassTypeInfo,
 		nullptr, 0,
@@ -69,7 +86,7 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelGameMode() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ATimeTravelGameMode, 1017245223);
+	IMPLEMENT_CLASS(ATimeTravelGameMode, 3728777003);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ATimeTravelGameMode(Z_Construct_UClass_ATimeTravelGameMode, &ATimeTravelGameMode::StaticClass, TEXT("/Script/TimeTravel"), TEXT("ATimeTravelGameMode"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ATimeTravelGameMode);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
