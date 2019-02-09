@@ -113,9 +113,29 @@ void ARobotCharacter::OnSeePlayer(APawn* Pawn)
 	}
 }
 
+void ARobotCharacter::LookingForOverlapActor()
+{
+	TArray<AActor*> Overlaps;
+
+	MeleeCollisionComp->GetOverlappingActors(Overlaps, ATimeTravelCharacter::StaticClass());
+
+	for (int32 i = 0; i < Overlaps.Num(); i++)
+	{
+		ATimeTravelCharacter* OverlappingPawn = Cast<ATimeTravelCharacter>(Overlaps[i]);
+
+		if (OverlappingPawn)
+		{
+			ExecuteMeleeDamage(OverlappingPawn);
+		}
+	}
+}
+
 void ARobotCharacter::OnMeleeCompBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
 {
 	ExecuteMeleeDamage(OtherActor);
+
+	FTimerHandle TimerHandle_MeleeAttack;
+	GetWorldTimerManager().SetTimer(TimerHandle_MeleeAttack, this, &ARobotCharacter::LookingForOverlapActor, 2.f, true);
 }
 
 void ARobotCharacter::ExecuteMeleeDamage(AActor* HitActor)
@@ -128,9 +148,14 @@ void ARobotCharacter::ExecuteMeleeDamage(AActor* HitActor)
 		{
 			PlayAnimMontage(MeleeAnimMontage);
 
-			FPointDamageEvent DmgEvent;
+			float bMeleeDuring = GetMesh()->AnimScriptInstance->Montage_GetPlayRate(MeleeAnimMontage);
 
-			HitActor->TakeDamage(50, DmgEvent, GetController(), this);
+			if (bMeleeDuring)
+			{
+				FPointDamageEvent DmgEvent;
+
+				HitActor->TakeDamage(10, DmgEvent, GetController(), this);
+			}
 		}
 	}
 }
