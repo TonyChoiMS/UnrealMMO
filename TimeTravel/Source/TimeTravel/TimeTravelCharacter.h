@@ -105,6 +105,9 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = Pawn)
 		UAnimMontage* AttackAnim4;
 
+	UPROPERTY(EditDefaultsOnly, Category = "Sound")
+		class USoundCue* SoundAttack;
+
 	float AnimDuration;
 
 protected:

@@ -2,6 +2,7 @@
 
 #include "TimeTravelCharacter.h"
 #include "HeadMountedDisplayFunctionLibrary.h"
+#include "Engine.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/InputComponent.h"
@@ -226,6 +227,11 @@ void ATimeTravelCharacter::StartAttack()
 
 			ComboNumber = 0;
 			GetWorldTimerManager().SetTimer(TimerHandle_StopAttack, this, &ATimeTravelCharacter::StopAttack, AnimDuration, false);
+		}
+
+		if (SoundAttack)
+		{
+			UGameplayStatics::SpawnSoundAttached(SoundAttack, GetRootComponent());
 		}
 	}
 }

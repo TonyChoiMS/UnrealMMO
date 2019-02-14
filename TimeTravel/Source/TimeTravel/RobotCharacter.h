@@ -29,6 +29,13 @@ protected:
 	UFUNCTION()
 		void OnMeleeCompBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
 
+	UPROPERTY(EditDefaultsOnly, Category = "Sound")
+		class USoundCue* SoundTakeHit;
+	UPROPERTY(EditDefaultsOnly, Category = "Sound")
+		class USoundCue* SoundDeath;
+	UPROPERTY(EditDefaultsOnly, Category = "Sound")
+		class USoundCue* SoundMelee;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

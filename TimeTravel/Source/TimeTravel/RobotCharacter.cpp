@@ -40,6 +40,11 @@ void ARobotCharacter::BeginPlay()
 	if (PawnSensingComp)
 	{
 		PawnSensingComp->OnSeePawn.AddDynamic(this, &ARobotCharacter::OnSeePlayer);
+
+		if (SoundTakeHit)
+		{
+			UGameplayStatics::SpawnSoundAttached(SoundTakeHit, RootComponent, NAME_None, FVector::ZeroVector, EAttachLocation::SnapToTarget, true);
+		}
 	}
 
 	if (MeleeCollisionComp)
@@ -148,6 +153,11 @@ void ARobotCharacter::ExecuteMeleeDamage(AActor* HitActor)
 		{
 			PlayAnimMontage(MeleeAnimMontage);
 
+			if (SoundMelee)
+			{
+				UGameplayStatics::SpawnSoundAttached(SoundMelee, GetRootComponent());
+			}
+
 			float bMeleeDuring = GetMesh()->AnimScriptInstance->Montage_GetPlayRate(MeleeAnimMontage);
 
 			if (bMeleeDuring)
@@ -208,5 +218,9 @@ void ARobotCharacter::SetRagdollPhysics()
 	GetMesh()->WakeAllRigidBodies();
 	GetMesh()->bBlendPhysics = true;
 
+	if (SoundDeath)
+	{
+		UGameplayStatics::SpawnSoundAttached(SoundDeath, RootComponent, NAME_None, FVector::ZeroVector, EAttachLocation::SnapToTarget, true);
+	}
 	SetLifeSpan(3.5f);
 }

@@ -129,7 +129,12 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ARobotCharacter); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ARobotCharacter)
 
 
-#define TimeTravel_Source_TimeTravel_RobotCharacter_h_12_PRIVATE_PROPERTY_OFFSET
+#define TimeTravel_Source_TimeTravel_RobotCharacter_h_12_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__SoundTakeHit() { return STRUCT_OFFSET(ARobotCharacter, SoundTakeHit); } \
+	FORCEINLINE static uint32 __PPO__SoundDeath() { return STRUCT_OFFSET(ARobotCharacter, SoundDeath); } \
+	FORCEINLINE static uint32 __PPO__SoundMelee() { return STRUCT_OFFSET(ARobotCharacter, SoundMelee); }
+
+
 #define TimeTravel_Source_TimeTravel_RobotCharacter_h_9_PROLOG
 #define TimeTravel_Source_TimeTravel_RobotCharacter_h_12_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
