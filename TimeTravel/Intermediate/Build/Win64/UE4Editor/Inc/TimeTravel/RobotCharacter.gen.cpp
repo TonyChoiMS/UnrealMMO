@@ -28,6 +28,7 @@ void EmptyLinkFunctionForGeneratedCodeRobotCharacter() {}
 	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
 	AIMODULE_API UClass* Z_Construct_UClass_UPawnSensingComponent_NoRegister();
 	AIMODULE_API UClass* Z_Construct_UClass_UBehaviorTree_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UParticleSystem_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USoundCue_NoRegister();
 // End Cross Module References
 	void ARobotCharacter::StaticRegisterNativesARobotCharacter()
@@ -223,6 +224,14 @@ void EmptyLinkFunctionForGeneratedCodeRobotCharacter() {}
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_RobotHP;
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_DeathFX_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_DeathFX;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_TakeHitFX_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_TakeHitFX;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SoundMelee_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_SoundMelee;
@@ -300,6 +309,20 @@ void EmptyLinkFunctionForGeneratedCodeRobotCharacter() {}
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ARobotCharacter_Statics::NewProp_RobotHP = { UE4CodeGen_Private::EPropertyClass::Float, "RobotHP", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000000005, 1, nullptr, STRUCT_OFFSET(ARobotCharacter, RobotHP), METADATA_PARAMS(Z_Construct_UClass_ARobotCharacter_Statics::NewProp_RobotHP_MetaData, ARRAY_COUNT(Z_Construct_UClass_ARobotCharacter_Statics::NewProp_RobotHP_MetaData)) };
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ARobotCharacter_Statics::NewProp_DeathFX_MetaData[] = {
+		{ "Category", "FX" },
+		{ "ModuleRelativePath", "RobotCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ARobotCharacter_Statics::NewProp_DeathFX = { UE4CodeGen_Private::EPropertyClass::Object, "DeathFX", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0020080000010001, 1, nullptr, STRUCT_OFFSET(ARobotCharacter, DeathFX), Z_Construct_UClass_UParticleSystem_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ARobotCharacter_Statics::NewProp_DeathFX_MetaData, ARRAY_COUNT(Z_Construct_UClass_ARobotCharacter_Statics::NewProp_DeathFX_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ARobotCharacter_Statics::NewProp_TakeHitFX_MetaData[] = {
+		{ "Category", "FX" },
+		{ "ModuleRelativePath", "RobotCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ARobotCharacter_Statics::NewProp_TakeHitFX = { UE4CodeGen_Private::EPropertyClass::Object, "TakeHitFX", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0020080000010001, 1, nullptr, STRUCT_OFFSET(ARobotCharacter, TakeHitFX), Z_Construct_UClass_UParticleSystem_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ARobotCharacter_Statics::NewProp_TakeHitFX_MetaData, ARRAY_COUNT(Z_Construct_UClass_ARobotCharacter_Statics::NewProp_TakeHitFX_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ARobotCharacter_Statics::NewProp_SoundMelee_MetaData[] = {
 		{ "Category", "Sound" },
 		{ "ModuleRelativePath", "RobotCharacter.h" },
@@ -327,6 +350,8 @@ void EmptyLinkFunctionForGeneratedCodeRobotCharacter() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARobotCharacter_Statics::NewProp_PawnSensingComp,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARobotCharacter_Statics::NewProp_BotBehavior,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARobotCharacter_Statics::NewProp_RobotHP,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARobotCharacter_Statics::NewProp_DeathFX,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARobotCharacter_Statics::NewProp_TakeHitFX,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARobotCharacter_Statics::NewProp_SoundMelee,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARobotCharacter_Statics::NewProp_SoundDeath,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARobotCharacter_Statics::NewProp_SoundTakeHit,
@@ -354,7 +379,7 @@ void EmptyLinkFunctionForGeneratedCodeRobotCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ARobotCharacter, 1381456157);
+	IMPLEMENT_CLASS(ARobotCharacter, 3308464441);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ARobotCharacter(Z_Construct_UClass_ARobotCharacter, &ARobotCharacter::StaticClass, TEXT("/Script/TimeTravel"), TEXT("ARobotCharacter"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ARobotCharacter);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

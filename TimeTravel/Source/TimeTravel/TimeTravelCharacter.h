@@ -51,6 +51,8 @@ public:
 	float IsAction3;
 	float IsAction4;
 
+	ASword* DefaultWeapon;
+
 
 protected:
 
@@ -107,6 +109,12 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Sound")
 		class USoundCue* SoundAttack;
+
+	UPROPERTY(EditDefaultsOnly, Category = "FX")
+		TArray<UParticleSystem*> AttackFX;
+
+	UPROPERTY(Transient)		// 휘발성, 디스크에 저장, 로드되지 않고 지속되지 않는 파생값으로 지정
+		UParticleSystemComponent* AttackFXComp;
 
 	float AnimDuration;
 

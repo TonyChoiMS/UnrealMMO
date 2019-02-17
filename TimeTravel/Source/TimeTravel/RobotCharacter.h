@@ -36,6 +36,11 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Sound")
 		class USoundCue* SoundMelee;
 
+	UPROPERTY(EditDefaultsOnly, Category = "FX")
+		UParticleSystem* TakeHitFX;
+	UPROPERTY(EditDefaultsOnly, Category = "FX")
+		UParticleSystem* DeathFX;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

@@ -40,11 +40,6 @@ void ARobotCharacter::BeginPlay()
 	if (PawnSensingComp)
 	{
 		PawnSensingComp->OnSeePawn.AddDynamic(this, &ARobotCharacter::OnSeePlayer);
-
-		if (SoundTakeHit)
-		{
-			UGameplayStatics::SpawnSoundAttached(SoundTakeHit, RootComponent, NAME_None, FVector::ZeroVector, EAttachLocation::SnapToTarget, true);
-		}
 	}
 
 	if (MeleeCollisionComp)
@@ -182,6 +177,16 @@ void ARobotCharacter::OnHit(float DamageTaken, struct FDamageEvent const& Damage
 		{
 			ApplyDamageMomentum(DamageTaken, DamageEvent, PawnInstigator, DamageCauser);
 		}
+
+		if (SoundTakeHit)
+		{
+			UGameplayStatics::SpawnSoundAttached(SoundTakeHit, RootComponent, NAME_None, FVector::ZeroVector, EAttachLocation::SnapToTarget, true);
+		}
+
+		if (TakeHitFX)
+		{
+			UGameplayStatics::SpawnEmitterAtLocation(this, TakeHitFX, GetActorLocation(), GetActorRotation());
+		}
 	}
 }
 
@@ -221,6 +226,11 @@ void ARobotCharacter::SetRagdollPhysics()
 	if (SoundDeath)
 	{
 		UGameplayStatics::SpawnSoundAttached(SoundDeath, RootComponent, NAME_None, FVector::ZeroVector, EAttachLocation::SnapToTarget, true);
+	}
+
+	if (DeathFX)
+	{
+		UGameplayStatics::SpawnEmitterAtLocation(this, DeathFX, GetActorLocation(), GetActorRotation());
 	}
 	SetLifeSpan(3.5f);
 }

@@ -132,7 +132,9 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ARobotCharacter); \
 #define TimeTravel_Source_TimeTravel_RobotCharacter_h_12_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__SoundTakeHit() { return STRUCT_OFFSET(ARobotCharacter, SoundTakeHit); } \
 	FORCEINLINE static uint32 __PPO__SoundDeath() { return STRUCT_OFFSET(ARobotCharacter, SoundDeath); } \
-	FORCEINLINE static uint32 __PPO__SoundMelee() { return STRUCT_OFFSET(ARobotCharacter, SoundMelee); }
+	FORCEINLINE static uint32 __PPO__SoundMelee() { return STRUCT_OFFSET(ARobotCharacter, SoundMelee); } \
+	FORCEINLINE static uint32 __PPO__TakeHitFX() { return STRUCT_OFFSET(ARobotCharacter, TakeHitFX); } \
+	FORCEINLINE static uint32 __PPO__DeathFX() { return STRUCT_OFFSET(ARobotCharacter, DeathFX); }
 
 
 #define TimeTravel_Source_TimeTravel_RobotCharacter_h_9_PROLOG
