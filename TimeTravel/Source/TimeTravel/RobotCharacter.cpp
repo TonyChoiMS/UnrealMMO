@@ -80,6 +80,8 @@ float ARobotCharacter::TakeDamage(float flDamage, struct FDamageEvent const& Dam
 	{
 		RobotHP -= ActualDamage;
 
+		UpdateHealthbar();
+
 		if (RobotHP <= 0)
 		{
 			Die(ActualDamage, DamageEvent, EventInstigator, DamageCauser);

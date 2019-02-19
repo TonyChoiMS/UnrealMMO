@@ -79,4 +79,7 @@ public:
 	virtual void Die(float KillingDamage, struct FDamageEvent const& DamageEvent, AController* Killer, AActor* DamageCauser);
 
 	void SetRagdollPhysics();
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "HUD")		// BlueprintImplementableEvent : 블루프린트에서 덮어쓰기 가능한 함수(변수)로 선언.
+		void UpdateHealthbar();
 };

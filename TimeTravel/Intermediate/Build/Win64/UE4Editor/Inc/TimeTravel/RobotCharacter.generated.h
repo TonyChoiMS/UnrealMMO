@@ -87,6 +87,8 @@ class APawn;
 	}
 
 
+#define TimeTravel_Source_TimeTravel_RobotCharacter_h_12_EVENT_PARMS
+#define TimeTravel_Source_TimeTravel_RobotCharacter_h_12_CALLBACK_WRAPPERS
 #define TimeTravel_Source_TimeTravel_RobotCharacter_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesARobotCharacter(); \
@@ -137,12 +139,16 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ARobotCharacter); \
 	FORCEINLINE static uint32 __PPO__DeathFX() { return STRUCT_OFFSET(ARobotCharacter, DeathFX); }
 
 
-#define TimeTravel_Source_TimeTravel_RobotCharacter_h_9_PROLOG
+#define TimeTravel_Source_TimeTravel_RobotCharacter_h_9_PROLOG \
+	TimeTravel_Source_TimeTravel_RobotCharacter_h_12_EVENT_PARMS
+
+
 #define TimeTravel_Source_TimeTravel_RobotCharacter_h_12_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	TimeTravel_Source_TimeTravel_RobotCharacter_h_12_PRIVATE_PROPERTY_OFFSET \
 	TimeTravel_Source_TimeTravel_RobotCharacter_h_12_RPC_WRAPPERS \
+	TimeTravel_Source_TimeTravel_RobotCharacter_h_12_CALLBACK_WRAPPERS \
 	TimeTravel_Source_TimeTravel_RobotCharacter_h_12_INCLASS \
 	TimeTravel_Source_TimeTravel_RobotCharacter_h_12_STANDARD_CONSTRUCTORS \
 public: \
@@ -154,6 +160,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	TimeTravel_Source_TimeTravel_RobotCharacter_h_12_PRIVATE_PROPERTY_OFFSET \
 	TimeTravel_Source_TimeTravel_RobotCharacter_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+	TimeTravel_Source_TimeTravel_RobotCharacter_h_12_CALLBACK_WRAPPERS \
 	TimeTravel_Source_TimeTravel_RobotCharacter_h_12_INCLASS_NO_PURE_DECLS \
 	TimeTravel_Source_TimeTravel_RobotCharacter_h_12_ENHANCED_CONSTRUCTORS \
 private: \

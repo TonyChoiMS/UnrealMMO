@@ -6,7 +6,7 @@
   Using Visual Studio 2017 14.16.27023 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023) and Windows 10.0.17763.0 SDK (C:\Program Files (x86)\Windows Kits\10).
   Parsing headers for TimeTravelEditor
     Running UnrealHeaderTool "C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\TimeTravel.uproject" "C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Intermediate\Build\Win64\TimeTravelEditor\Development\TimeTravelEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
-  Reflection code generated for TimeTravelEditor in 7.4772701 seconds
+  Reflection code generated for TimeTravelEditor in 7.1972065 seconds
   Building 26 actions with 6 processes...
     [1/26] PCLaunch.rc
     [2/26] PCLaunch.rc
@@ -22,8 +22,8 @@
     [12/26] RobotAIController.cpp
     [13/26] TimeTravelGameMode.cpp
     [14/26] TimeTravelCharacter.cpp
-    [15/26] BotTargetPoint.cpp
-    [16/26] Sword.cpp
+    [15/26] Sword.cpp
+    [16/26] BotTargetPoint.cpp
     [17/26] Climb.cpp
     [18/26] UE4Editor-Climb.lib
        C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Plugins\Climb\Intermediate\Build\Win64\UE4Editor\Development\Climb\UE4Editor-Climb.lib 라이브러리 및 C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Plugins\Climb\Intermediate\Build\Win64\UE4Editor\Development\Climb\UE4Editor-Climb.exp 개체를 생성하고 있습니다.
@@ -39,4 +39,4 @@
     [26/26] UE4Editor-TimeTravel.dll
        C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Intermediate\Build\Win64\UE4Editor\Development\TimeTravel\UE4Editor-TimeTravel.suppressed.lib 라이브러리 및 C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Intermediate\Build\Win64\UE4Editor\Development\TimeTravel\UE4Editor-TimeTravel.suppressed.exp 개체를 생성하고 있습니다.
   Deploying TimeTravelEditor Win64 Development...
-  Total build time: 57.09 seconds (Parallel executor: 42.19 seconds)
+  Total build time: 72.00 seconds (Parallel executor: 43.01 seconds)

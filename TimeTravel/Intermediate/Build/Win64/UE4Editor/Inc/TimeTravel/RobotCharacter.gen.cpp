@@ -24,6 +24,7 @@ void EmptyLinkFunctionForGeneratedCodeRobotCharacter() {}
 	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 	TIMETRAVEL_API UFunction* Z_Construct_UFunction_ARobotCharacter_OnSeePlayer();
 	ENGINE_API UClass* Z_Construct_UClass_APawn_NoRegister();
+	TIMETRAVEL_API UFunction* Z_Construct_UFunction_ARobotCharacter_UpdateHealthbar();
 	ENGINE_API UClass* Z_Construct_UClass_UCapsuleComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
 	AIMODULE_API UClass* Z_Construct_UClass_UPawnSensingComponent_NoRegister();
@@ -31,6 +32,11 @@ void EmptyLinkFunctionForGeneratedCodeRobotCharacter() {}
 	ENGINE_API UClass* Z_Construct_UClass_UParticleSystem_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USoundCue_NoRegister();
 // End Cross Module References
+	static FName NAME_ARobotCharacter_UpdateHealthbar = FName(TEXT("UpdateHealthbar"));
+	void ARobotCharacter::UpdateHealthbar()
+	{
+		ProcessEvent(FindFunctionChecked(NAME_ARobotCharacter_UpdateHealthbar),NULL);
+	}
 	void ARobotCharacter::StaticRegisterNativesARobotCharacter()
 	{
 		UClass* Class = ARobotCharacter::StaticClass();
@@ -188,6 +194,30 @@ void EmptyLinkFunctionForGeneratedCodeRobotCharacter() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_ARobotCharacter_UpdateHealthbar_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ARobotCharacter_UpdateHealthbar_Statics::Function_MetaDataParams[] = {
+		{ "Category", "HUD" },
+		{ "ModuleRelativePath", "RobotCharacter.h" },
+		{ "ToolTip", "BlueprintImplementableEvent : ????????\xc6\xae???? ???\xee\xbe\xb2?? ?????? ?\xd4\xbc?(????)?? ????." },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ARobotCharacter_UpdateHealthbar_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ARobotCharacter, "UpdateHealthbar", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x08020800, 0, nullptr, 0, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ARobotCharacter_UpdateHealthbar_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_ARobotCharacter_UpdateHealthbar_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ARobotCharacter_UpdateHealthbar()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ARobotCharacter_UpdateHealthbar_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	UClass* Z_Construct_UClass_ARobotCharacter_NoRegister()
 	{
 		return ARobotCharacter::StaticClass();
@@ -255,6 +285,7 @@ void EmptyLinkFunctionForGeneratedCodeRobotCharacter() {}
 		{ &Z_Construct_UFunction_ARobotCharacter_ExecuteMeleeDamage, "ExecuteMeleeDamage" }, // 1079889009
 		{ &Z_Construct_UFunction_ARobotCharacter_OnMeleeCompBeginOverlap, "OnMeleeCompBeginOverlap" }, // 137603945
 		{ &Z_Construct_UFunction_ARobotCharacter_OnSeePlayer, "OnSeePlayer" }, // 376142459
+		{ &Z_Construct_UFunction_ARobotCharacter_UpdateHealthbar, "UpdateHealthbar" }, // 4224599295
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ARobotCharacter_Statics::Class_MetaDataParams[] = {
@@ -379,7 +410,7 @@ void EmptyLinkFunctionForGeneratedCodeRobotCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ARobotCharacter, 3308464441);
+	IMPLEMENT_CLASS(ARobotCharacter, 1876939120);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ARobotCharacter(Z_Construct_UClass_ARobotCharacter, &ARobotCharacter::StaticClass, TEXT("/Script/TimeTravel"), TEXT("ARobotCharacter"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ARobotCharacter);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
