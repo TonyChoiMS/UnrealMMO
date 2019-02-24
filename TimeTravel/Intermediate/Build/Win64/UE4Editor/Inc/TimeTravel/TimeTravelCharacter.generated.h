@@ -13,8 +13,64 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TIMETRAVEL_TimeTravelCharacter_generated_h
 
-#define TimeTravel_Source_TimeTravel_TimeTravelCharacter_h_12_RPC_WRAPPERS
-#define TimeTravel_Source_TimeTravel_TimeTravelCharacter_h_12_RPC_WRAPPERS_NO_PURE_DECLS
+#define TimeTravel_Source_TimeTravel_TimeTravelCharacter_h_12_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execBPLeftRight) \
+	{ \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_Value); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->BPLeftRight(Z_Param_Value); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execBPUpDown) \
+	{ \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_Value); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->BPUpDown(Z_Param_Value); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execStartAttack) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->StartAttack(); \
+		P_NATIVE_END; \
+	}
+
+
+#define TimeTravel_Source_TimeTravel_TimeTravelCharacter_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execBPLeftRight) \
+	{ \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_Value); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->BPLeftRight(Z_Param_Value); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execBPUpDown) \
+	{ \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_Value); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->BPUpDown(Z_Param_Value); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execStartAttack) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->StartAttack(); \
+		P_NATIVE_END; \
+	}
+
+
 #define TimeTravel_Source_TimeTravel_TimeTravelCharacter_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesATimeTravelCharacter(); \

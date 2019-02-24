@@ -2,6 +2,6 @@
 	"BuildId": "4541578",
 	"Modules": 
 	{
-		"TimeTravel": "UE4Editor-TimeTravel-2030.dll"
+		"TimeTravel": "UE4Editor-TimeTravel.dll"
 	}
 }

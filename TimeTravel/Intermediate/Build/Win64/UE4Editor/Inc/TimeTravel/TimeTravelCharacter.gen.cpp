@@ -17,6 +17,9 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelCharacter() {}
 	TIMETRAVEL_API UClass* Z_Construct_UClass_ATimeTravelCharacter();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	UPackage* Z_Construct_UPackage__Script_TimeTravel();
+	TIMETRAVEL_API UFunction* Z_Construct_UFunction_ATimeTravelCharacter_BPLeftRight();
+	TIMETRAVEL_API UFunction* Z_Construct_UFunction_ATimeTravelCharacter_BPUpDown();
+	TIMETRAVEL_API UFunction* Z_Construct_UFunction_ATimeTravelCharacter_StartAttack();
 	ENGINE_API UClass* Z_Construct_UClass_UParticleSystemComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UParticleSystem_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USoundCue_NoRegister();
@@ -28,6 +31,102 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelCharacter() {}
 // End Cross Module References
 	void ATimeTravelCharacter::StaticRegisterNativesATimeTravelCharacter()
 	{
+		UClass* Class = ATimeTravelCharacter::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "BPLeftRight", &ATimeTravelCharacter::execBPLeftRight },
+			{ "BPUpDown", &ATimeTravelCharacter::execBPUpDown },
+			{ "StartAttack", &ATimeTravelCharacter::execStartAttack },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_ATimeTravelCharacter_BPLeftRight_Statics
+	{
+		struct TimeTravelCharacter_eventBPLeftRight_Parms
+		{
+			float Value;
+		};
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Value;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_ATimeTravelCharacter_BPLeftRight_Statics::NewProp_Value = { UE4CodeGen_Private::EPropertyClass::Float, "Value", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000000080, 1, nullptr, STRUCT_OFFSET(TimeTravelCharacter_eventBPLeftRight_Parms, Value), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ATimeTravelCharacter_BPLeftRight_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ATimeTravelCharacter_BPLeftRight_Statics::NewProp_Value,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATimeTravelCharacter_BPLeftRight_Statics::Function_MetaDataParams[] = {
+		{ "Category", "BPCalled" },
+		{ "ModuleRelativePath", "TimeTravelCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ATimeTravelCharacter_BPLeftRight_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATimeTravelCharacter, "BPLeftRight", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04020401, sizeof(TimeTravelCharacter_eventBPLeftRight_Parms), Z_Construct_UFunction_ATimeTravelCharacter_BPLeftRight_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_ATimeTravelCharacter_BPLeftRight_Statics::PropPointers), 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ATimeTravelCharacter_BPLeftRight_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_ATimeTravelCharacter_BPLeftRight_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ATimeTravelCharacter_BPLeftRight()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ATimeTravelCharacter_BPLeftRight_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ATimeTravelCharacter_BPUpDown_Statics
+	{
+		struct TimeTravelCharacter_eventBPUpDown_Parms
+		{
+			float Value;
+		};
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Value;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_ATimeTravelCharacter_BPUpDown_Statics::NewProp_Value = { UE4CodeGen_Private::EPropertyClass::Float, "Value", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000000080, 1, nullptr, STRUCT_OFFSET(TimeTravelCharacter_eventBPUpDown_Parms, Value), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ATimeTravelCharacter_BPUpDown_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ATimeTravelCharacter_BPUpDown_Statics::NewProp_Value,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATimeTravelCharacter_BPUpDown_Statics::Function_MetaDataParams[] = {
+		{ "Category", "BPCalled" },
+		{ "ModuleRelativePath", "TimeTravelCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ATimeTravelCharacter_BPUpDown_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATimeTravelCharacter, "BPUpDown", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04020401, sizeof(TimeTravelCharacter_eventBPUpDown_Parms), Z_Construct_UFunction_ATimeTravelCharacter_BPUpDown_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_ATimeTravelCharacter_BPUpDown_Statics::PropPointers), 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ATimeTravelCharacter_BPUpDown_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_ATimeTravelCharacter_BPUpDown_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ATimeTravelCharacter_BPUpDown()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ATimeTravelCharacter_BPUpDown_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ATimeTravelCharacter_StartAttack_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATimeTravelCharacter_StartAttack_Statics::Function_MetaDataParams[] = {
+		{ "Category", "BpCalled" },
+		{ "ModuleRelativePath", "TimeTravelCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ATimeTravelCharacter_StartAttack_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATimeTravelCharacter, "StartAttack", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04020401, 0, nullptr, 0, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ATimeTravelCharacter_StartAttack_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_ATimeTravelCharacter_StartAttack_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ATimeTravelCharacter_StartAttack()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ATimeTravelCharacter_StartAttack_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	UClass* Z_Construct_UClass_ATimeTravelCharacter_NoRegister()
 	{
@@ -36,6 +135,7 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelCharacter() {}
 	struct Z_Construct_UClass_ATimeTravelCharacter_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
@@ -103,6 +203,11 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelCharacter() {}
 	UObject* (*const Z_Construct_UClass_ATimeTravelCharacter_Statics::DependentSingletons[])() = {
 		(UObject* (*)())Z_Construct_UClass_ACharacter,
 		(UObject* (*)())Z_Construct_UPackage__Script_TimeTravel,
+	};
+	const FClassFunctionLinkInfo Z_Construct_UClass_ATimeTravelCharacter_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_ATimeTravelCharacter_BPLeftRight, "BPLeftRight" }, // 1023435938
+		{ &Z_Construct_UFunction_ATimeTravelCharacter_BPUpDown, "BPUpDown" }, // 1472585674
+		{ &Z_Construct_UFunction_ATimeTravelCharacter_StartAttack, "StartAttack" }, // 2395476261
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATimeTravelCharacter_Statics::Class_MetaDataParams[] = {
@@ -243,7 +348,7 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelCharacter() {}
 		&ATimeTravelCharacter::StaticClass,
 		DependentSingletons, ARRAY_COUNT(DependentSingletons),
 		0x008000A4u,
-		nullptr, 0,
+		FuncInfo, ARRAY_COUNT(FuncInfo),
 		Z_Construct_UClass_ATimeTravelCharacter_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UClass_ATimeTravelCharacter_Statics::PropPointers),
 		"Game",
 		&StaticCppClassTypeInfo,
@@ -259,7 +364,7 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ATimeTravelCharacter, 3943171769);
+	IMPLEMENT_CLASS(ATimeTravelCharacter, 1401813517);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ATimeTravelCharacter(Z_Construct_UClass_ATimeTravelCharacter, &ATimeTravelCharacter::StaticClass, TEXT("/Script/TimeTravel"), TEXT("ATimeTravelCharacter"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ATimeTravelCharacter);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

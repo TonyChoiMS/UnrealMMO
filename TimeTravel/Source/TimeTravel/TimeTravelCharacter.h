@@ -40,6 +40,7 @@ public:
 	UPROPERTY(config, EditAnyWhere, BlueprintReadWrite, Category = Health)
 		float MaxHP;
 
+	UFUNCTION(BlueprintCallable, Category = "BpCalled")
 	void StartAttack();
 
 	void StopAttack();
@@ -53,6 +54,14 @@ public:
 
 	ASword* DefaultWeapon;
 
+	float BPUpDownValue;
+	float BPLeftRightValue;
+
+	UFUNCTION(BlueprintCallable, Category = "BPCalled")
+		void BPUpDown(float Value);
+
+	UFUNCTION(BlueprintCallable, Category = "BPCalled")
+		void BPLeftRight(float Value);
 
 protected:
 

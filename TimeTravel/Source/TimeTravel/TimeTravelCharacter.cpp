@@ -74,6 +74,15 @@ void ATimeTravelCharacter::Tick(float flDeltaTime)
 
 		AddMovementInput(GetActorForwardVector(), m_flUpDownValue);
 	}
+
+	if (BPUpDownValue != 0.f || BPLeftRightValue != 0.f)
+	{
+		AddMovementInput(GetActorForwardVector(), BPUpDownValue * flDeltaTime);
+
+		FRotator NewRotation = this->GetActorRotation() + FRotator(BPUpDownValue, BPLeftRightValue, 0.f);
+
+		Controller->SetControlRotation(NewRotation);
+	}
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -263,4 +272,14 @@ void ATimeTravelCharacter::StopAttack()
 	{
 		ComboNumber = 0;
 	}
+}
+
+void ATimeTravelCharacter::BPUpDown(float Value)
+{
+	BPUpDownValue = Value;
+}
+
+void ATimeTravelCharacter::BPLeftRight(float Value)
+{
+	BPLeftRightValue = Value;
 }
