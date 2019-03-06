@@ -10,6 +10,7 @@
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Sword.h"
+#include "Armor.h"
 
 //////////////////////////////////////////////////////////////////////////
 // ATimeTravelCharacter
@@ -282,4 +283,16 @@ void ATimeTravelCharacter::BPUpDown(float Value)
 void ATimeTravelCharacter::BPLeftRight(float Value)
 {
 	BPLeftRightValue = Value;
+}
+
+void ATimeTravelCharacter::PutOnArmor()
+{
+	FActorSpawnParameters SpawnInfo;
+	DefaultArmor = GetWorld()->SpawnActor<AArmor>(ArmorClass, SpawnInfo);
+	DefaultArmor->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, "ArmorSocket");
+}
+
+void ATimeTravelCharacter::TakeOffArmor()
+{
+	DefaultArmor->RemoveArmor();
 }

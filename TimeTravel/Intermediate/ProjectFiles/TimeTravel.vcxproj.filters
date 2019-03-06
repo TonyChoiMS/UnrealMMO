@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\TimeTravel.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{7D6DB260-D06A-4DE0-ACCC-83AAC83A06DA}</UniqueIdentifier>
+      <UniqueIdentifier>{D4465172-8298-441E-9B42-6B1FD490B9AB}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\TimeTravel.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{E9FE0EA3-8588-404C-9E95-5072327A49EE}</UniqueIdentifier>
+      <UniqueIdentifier>{BD128987-8A68-41EB-958B-30689E72DD77}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,28 +30,28 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Plugins">
-      <UniqueIdentifier>{583684AD-6B82-44CC-9382-ABD86D4C53EA}</UniqueIdentifier>
+      <UniqueIdentifier>{E96F7052-A0CE-4EC5-BF0F-587434511FE2}</UniqueIdentifier>
     </Filter>
     <Filter Include="Plugins\Climb">
-      <UniqueIdentifier>{078A1A0A-102E-4910-A9E9-B0D6ADB75DC5}</UniqueIdentifier>
+      <UniqueIdentifier>{DE5D1296-876E-4666-8073-92C5D0A784F4}</UniqueIdentifier>
     </Filter>
     <Filter Include="Plugins\Climb\Source">
-      <UniqueIdentifier>{6CABEC14-212F-4BE1-987F-4090765E7C2C}</UniqueIdentifier>
+      <UniqueIdentifier>{CC78160F-762B-45C3-92E6-23C5838E72B8}</UniqueIdentifier>
     </Filter>
     <Filter Include="Plugins\Climb\Source\Climb">
-      <UniqueIdentifier>{429D875D-F9C0-486D-AE3A-EF283CCD1C08}</UniqueIdentifier>
+      <UniqueIdentifier>{AF5E1F59-872F-4E8C-895F-980BDEBF7835}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Plugins\Climb\Source\Climb\Climb.Build.cs">
       <Filter>Plugins\Climb\Source\Climb</Filter>
     </None>
     <Filter Include="Plugins\Climb\Source\Climb\Private">
-      <UniqueIdentifier>{197DF482-BDF3-4C63-ADA0-CCCF3E7FD9DD}</UniqueIdentifier>
+      <UniqueIdentifier>{539476B4-3640-4A72-9791-C4FBEBEEDB2B}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Plugins\Climb\Source\Climb\Private\Climb.cpp">
       <Filter>Plugins\Climb\Source\Climb\Private</Filter>
     </ClCompile>
     <Filter Include="Plugins\Climb\Source\Climb\Public">
-      <UniqueIdentifier>{96910D48-A6CF-4B46-B28A-160F1CDA5480}</UniqueIdentifier>
+      <UniqueIdentifier>{DDAD20E6-CAEA-429C-92AF-9340D34E7C67}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Plugins\Climb\Source\Climb\Public\Climb.h">
       <Filter>Plugins\Climb\Source\Climb\Public</Filter>
@@ -60,14 +60,38 @@
       <Filter>Plugins\Climb</Filter>
     </None>
     <Filter Include="Plugins\Climb\Resources">
-      <UniqueIdentifier>{55E686AA-0DFD-4DDD-983B-E78DDA25A304}</UniqueIdentifier>
+      <UniqueIdentifier>{E248C06E-2A4E-4433-A4E1-D6B0867CF8F9}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Plugins\Climb\Resources\Icon128.png">
       <Filter>Plugins\Climb\Resources</Filter>
     </None>
     <Filter Include="Source\TimeTravel">
-      <UniqueIdentifier>{1691F92A-B903-4F59-BA8D-D88BDABBBB70}</UniqueIdentifier>
+      <UniqueIdentifier>{EA067448-C2F2-4196-829D-274249258863}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\TimeTravel\Armor.cpp">
+      <Filter>Source\TimeTravel</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TimeTravel\Armor.h">
+      <Filter>Source\TimeTravel</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TimeTravel\BotTargetPoint.cpp">
+      <Filter>Source\TimeTravel</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TimeTravel\BotTargetPoint.h">
+      <Filter>Source\TimeTravel</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TimeTravel\BTTask_FindNearLocation.cpp">
+      <Filter>Source\TimeTravel</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TimeTravel\BTTask_FindNearLocation.h">
+      <Filter>Source\TimeTravel</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TimeTravel\BTTask_FindTargetPointLocation.cpp">
+      <Filter>Source\TimeTravel</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TimeTravel\BTTask_FindTargetPointLocation.h">
+      <Filter>Source\TimeTravel</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\TimeTravel\RobotAIController.cpp">
       <Filter>Source\TimeTravel</Filter>
     </ClCompile>
@@ -107,27 +131,5 @@
     <ClInclude Include="..\..\Source\TimeTravel\TimeTravelGameMode.h">
       <Filter>Source\TimeTravel</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Source\TimeTravel\BTTask_FindNearLocation.h">
-      <Filter>Source\TimeTravel</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\TimeTravel\BotTargetPoint.h">
-      <Filter>Source\TimeTravel</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\TimeTravel\BTTask_FindTargetPointLocation.h">
-      <Filter>Source\TimeTravel</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Source\TimeTravel\BTTask_FindNearLocation.cpp">
-      <Filter>Source\TimeTravel</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\TimeTravel\BotTargetPoint.cpp">
-      <Filter>Source\TimeTravel</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\TimeTravel\BTTask_FindTargetPointLocation.cpp">
-      <Filter>Source\TimeTravel</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>

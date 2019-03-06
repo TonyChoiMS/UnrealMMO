@@ -63,6 +63,15 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "BPCalled")
 		void BPLeftRight(float Value);
 
+	UPROPERTY(EditDefaultsOnly, Category = "Armor")
+		TSubclassOf<class AArmor> ArmorClass;		// TSubclassOf 템플릿을 사용하여 AArmor의 파생 클래스만 할당할 수 있으며, 선택지를 제한시킬 수 있다.
+
+	UFUNCTION(BlueprintCallable, Category = "BPCalled")
+		void PutOnArmor();
+
+	UFUNCTION(BlueprintCallable, Category = "BPCalled")
+		void TakeOffArmor();
+
 protected:
 
 	virtual void BeginPlay() override;
@@ -126,6 +135,8 @@ protected:
 		UParticleSystemComponent* AttackFXComp;
 
 	float AnimDuration;
+
+	class AArmor* DefaultArmor;
 
 protected:
 	// APawn interface
