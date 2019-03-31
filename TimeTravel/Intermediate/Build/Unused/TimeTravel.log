@@ -6,39 +6,45 @@
   Using Visual Studio 2017 14.16.27023 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023) and Windows 10.0.17763.0 SDK (C:\Program Files (x86)\Windows Kits\10).
   Parsing headers for TimeTravelEditor
     Running UnrealHeaderTool "C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\TimeTravel.uproject" "C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Intermediate\Build\Win64\TimeTravelEditor\Development\TimeTravelEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
-  Reflection code generated for TimeTravelEditor in 7.9026301 seconds
-  Building 28 actions with 6 processes...
-    [1/28] PCLaunch.rc
-    [2/28] PCLaunch.rc
-    [3/28] SharedPCH.Engine.cpp
-    [4/28] TimeTravel.init.gen.cpp
-    [5/28] RobotCharacter.gen.cpp
-    [6/28] TimeTravelCharacter.gen.cpp
-    [7/28] Sword.gen.cpp
-    [8/28] Armor.gen.cpp
-    [9/28] BotTargetPoint.gen.cpp
-    [10/28] RobotAIController.gen.cpp
-    [11/28] BTTask_FindTargetPointLocation.gen.cpp
-    [12/28] BTTask_FindNearLocation.gen.cpp
-    [13/28] RobotAIController.cpp
-    [14/28] TimeTravelGameMode.cpp
-    [15/28] Sword.cpp
-    [16/28] BotTargetPoint.cpp
-    [17/28] TimeTravelCharacter.cpp
-    [18/28] RobotCharacter.cpp
-    [19/28] Climb.cpp
-    [20/28] UE4Editor-Climb.lib
+  Reflection code generated for TimeTravelEditor in 7.8341097 seconds
+  Deleting old hot reload file: "C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Binaries\Win64\UE4Editor-TimeTravel-751.dll".
+  Deleting old hot reload file: "C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Binaries\Win64\UE4Editor-TimeTravel-751.pdb".
+  Building 32 actions with 6 processes...
+    [1/32] PCLaunch.rc
+    [2/32] PCLaunch.rc
+    [3/32] SharedPCH.Engine.cpp
+    [4/32] TimeTravel.init.gen.cpp
+    [5/32] TimeTravelGameInstance.gen.cpp
+    [6/32] Sword.gen.cpp
+    [7/32] TimeTravelCharacter.gen.cpp
+    [8/32] RobotCharacter.gen.cpp
+    [9/32] PickupActor.gen.cpp
+    [10/32] RobotAIController.gen.cpp
+    [11/32] BotTargetPoint.gen.cpp
+    [12/32] Armor.gen.cpp
+    [13/32] TimeTravelGameInstance.cpp
+    [14/32] BotTargetPoint.cpp
+    [15/32] BTTask_FindTargetPointLocation.gen.cpp
+    [16/32] BTTask_FindNearLocation.gen.cpp
+    [17/32] RobotAIController.cpp
+    [18/32] Sword.cpp
+    [19/32] TimeTravel.cpp
+    [20/32] TimeTravelGameMode.cpp
+    [21/32] PickupActor.cpp
+    [22/32] RobotCharacter.cpp
+    [23/32] Climb.cpp
+    [24/32] TimeTravelGameMode.gen.cpp
+    [25/32] UE4Editor-Climb.lib
        C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Plugins\Climb\Intermediate\Build\Win64\UE4Editor\Development\Climb\UE4Editor-Climb.lib 라이브러리 및 C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Plugins\Climb\Intermediate\Build\Win64\UE4Editor\Development\Climb\UE4Editor-Climb.exp 개체를 생성하고 있습니다.
-    [21/28] TimeTravelGameMode.gen.cpp
-    [22/28] UE4Editor-Climb.dll
+    [26/32] UE4Editor-Climb.dll
        C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Plugins\Climb\Intermediate\Build\Win64\UE4Editor\Development\Climb\UE4Editor-Climb.suppressed.lib 라이브러리 및 C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Plugins\Climb\Intermediate\Build\Win64\UE4Editor\Development\Climb\UE4Editor-Climb.suppressed.exp 개체를 생성하고 있습니다.
-    [23/28] BTTask_FindTargetPointLocation.cpp
-    [24/28] BTTask_FindNearLocation.cpp
-    [25/28] Armor.cpp
-    [26/28] TimeTravel.cpp
-    [27/28] UE4Editor-TimeTravel.lib
+    [27/32] BTTask_FindTargetPointLocation.cpp
+    [28/32] Armor.cpp
+    [29/32] TimeTravelCharacter.cpp
+    [30/32] BTTask_FindNearLocation.cpp
+    [31/32] UE4Editor-TimeTravel.lib
        C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Intermediate\Build\Win64\UE4Editor\Development\TimeTravel\UE4Editor-TimeTravel.lib 라이브러리 및 C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Intermediate\Build\Win64\UE4Editor\Development\TimeTravel\UE4Editor-TimeTravel.exp 개체를 생성하고 있습니다.
-    [28/28] UE4Editor-TimeTravel.dll
+    [32/32] UE4Editor-TimeTravel.dll
        C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Intermediate\Build\Win64\UE4Editor\Development\TimeTravel\UE4Editor-TimeTravel.suppressed.lib 라이브러리 및 C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Intermediate\Build\Win64\UE4Editor\Development\TimeTravel\UE4Editor-TimeTravel.suppressed.exp 개체를 생성하고 있습니다.
   Deploying TimeTravelEditor Win64 Development...
-  Total build time: 66.97 seconds (Parallel executor: 54.00 seconds)
+  Total build time: 69.98 seconds (Parallel executor: 56.85 seconds)
