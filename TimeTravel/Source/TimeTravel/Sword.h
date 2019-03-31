@@ -33,6 +33,8 @@ public:
 
 	void SetOwningPawn(ATimeTravelCharacter* NewOwner);
 
+	void OnUpEquip();
+
 private:
 	UPROPERTY(VisibleAnyWhere, Category = Weapon)
 		class UCapsuleComponent* SwordCollision;

@@ -180,10 +180,25 @@ void ATimeTravelCharacter::SpawnDefaultInventory()
 {
 	FActorSpawnParameters SpawnInfo;
 
-	DefaultWeapon = GetWorld()->SpawnActor<ASword>(SwordClass, SpawnInfo);
+	/*DefaultWeapon = GetWorld()->SpawnActor<ASword>(SwordClass, SpawnInfo);
 
 	DefaultWeapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, "WeaponSocket");
-	DefaultWeapon->SetOwningPawn(this);
+	DefaultWeapon->SetOwningPawn(this);*/
+	int32 NumWeaponClasses = WeaponClasses.Num();
+
+	for (int32 i = 0; i < NumWeaponClasses; i++)
+	{
+		if (WeaponClasses[i])
+		{
+			DefaultWeapon = GetWorld()->SpawnActor<ASword>(WeaponClasses[i], SpawnInfo);
+			AddWeapon(DefaultWeapon);
+		}
+	}
+
+	if (WeaponList.Num() > 0)
+	{
+		SetCurrentWeapon(WeaponList[0], CurrentWeapon);
+	}
 }
 
 void ATimeTravelCharacter::UpDown(float flValue)
@@ -208,7 +223,7 @@ void ATimeTravelCharacter::StartAttack()
 			ComboNumber = 1;
 			if (AttackFX[0])
 			{
-				AttackFXComp = UGameplayStatics::SpawnEmitterAttached(AttackFX[0], DefaultWeapon->GetRootComponent(), "FXSocket");
+				AttackFXComp = UGameplayStatics::SpawnEmitterAttached(AttackFX[0], CurrentWeapon->GetRootComponent(), "FXSocket");
 			}
 			GetWorldTimerManager().SetTimer(TimerHandle_StopAttack, this, &ATimeTravelCharacter::StopAttack, AnimDuration, false);
 		}
@@ -222,7 +237,7 @@ void ATimeTravelCharacter::StartAttack()
 			ComboNumber = 2;
 			if (AttackFX[1])
 			{
-				AttackFXComp = UGameplayStatics::SpawnEmitterAttached(AttackFX[1], DefaultWeapon->GetRootComponent(), "FXSocket");
+				AttackFXComp = UGameplayStatics::SpawnEmitterAttached(AttackFX[1], CurrentWeapon->GetRootComponent(), "FXSocket");
 			}
 			GetWorldTimerManager().SetTimer(TimerHandle_StopAttack, this, &ATimeTravelCharacter::StopAttack, AnimDuration, false);
 		}
@@ -236,7 +251,7 @@ void ATimeTravelCharacter::StartAttack()
 			ComboNumber = 3;
 			if (AttackFX[2])
 			{
-				AttackFXComp = UGameplayStatics::SpawnEmitterAttached(AttackFX[2], DefaultWeapon->GetRootComponent(), "FXSocket");
+				AttackFXComp = UGameplayStatics::SpawnEmitterAttached(AttackFX[2], CurrentWeapon->GetRootComponent(), "FXSocket");
 			}
 			GetWorldTimerManager().SetTimer(TimerHandle_StopAttack, this, &ATimeTravelCharacter::StopAttack, AnimDuration, false);
 		}
@@ -250,7 +265,7 @@ void ATimeTravelCharacter::StartAttack()
 			ComboNumber = 0;
 			if (AttackFX[3])
 			{
-				AttackFXComp = UGameplayStatics::SpawnEmitterAttached(AttackFX[3], DefaultWeapon->GetRootComponent(), "FXSocket");
+				AttackFXComp = UGameplayStatics::SpawnEmitterAttached(AttackFX[3], CurrentWeapon->GetRootComponent(), "FXSocket");
 			}
 			GetWorldTimerManager().SetTimer(TimerHandle_StopAttack, this, &ATimeTravelCharacter::StopAttack, AnimDuration, false);
 		}
@@ -296,3 +311,44 @@ void ATimeTravelCharacter::TakeOffArmor()
 {
 	DefaultArmor->RemoveArmor();
 }
+
+void ATimeTravelCharacter::AddWeapon(ASword* Sword)
+{
+	if (Sword)
+	{
+		WeaponList.AddUnique(Sword);
+	}
+}
+
+void ATimeTravelCharacter::SetCurrentWeapon(class ASword* NewWeapon, class ASword* LastWeapon)
+{
+	ASword* LocalLastWeapon = NULL;
+
+	if (LastWeapon != NULL)
+	{
+		LocalLastWeapon = LastWeapon;
+	}
+	else if (NewWeapon != CurrentWeapon)
+	{
+		LocalLastWeapon = CurrentWeapon;
+	}
+
+	if (LocalLastWeapon)
+	{
+		LocalLastWeapon->OnUpEquip();
+	}
+	CurrentWeapon = NewWeapon;
+
+	if (NewWeapon)
+	{
+		NewWeapon->SetOwningPawn(this);
+		NewWeapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, "WeaponSocket");
+		NewWeapon->SwordMesh->SetHiddenInGame(false);
+	}
+}
+
+void ATimeTravelCharacter::ChangeSword(int32 InNum)
+{
+	SetCurrentWeapon(WeaponList[InNum], CurrentWeapon);
+}
+

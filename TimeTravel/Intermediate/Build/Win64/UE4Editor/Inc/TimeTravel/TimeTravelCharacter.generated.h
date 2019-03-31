@@ -15,6 +15,15 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define TimeTravel_Source_TimeTravel_TimeTravelCharacter_h_12_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execChangeSword) \
+	{ \
+		P_GET_PROPERTY(UIntProperty,Z_Param_InNum); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->ChangeSword(Z_Param_InNum); \
+		P_NATIVE_END; \
+	} \
+ \
 	DECLARE_FUNCTION(execTakeOffArmor) \
 	{ \
 		P_FINISH; \
@@ -59,6 +68,15 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 
 #define TimeTravel_Source_TimeTravel_TimeTravelCharacter_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execChangeSword) \
+	{ \
+		P_GET_PROPERTY(UIntProperty,Z_Param_InNum); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->ChangeSword(Z_Param_InNum); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execTakeOffArmor) \
 	{ \

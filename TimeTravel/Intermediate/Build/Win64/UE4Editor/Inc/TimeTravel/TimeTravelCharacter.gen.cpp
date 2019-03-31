@@ -19,6 +19,7 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelCharacter() {}
 	UPackage* Z_Construct_UPackage__Script_TimeTravel();
 	TIMETRAVEL_API UFunction* Z_Construct_UFunction_ATimeTravelCharacter_BPLeftRight();
 	TIMETRAVEL_API UFunction* Z_Construct_UFunction_ATimeTravelCharacter_BPUpDown();
+	TIMETRAVEL_API UFunction* Z_Construct_UFunction_ATimeTravelCharacter_ChangeSword();
 	TIMETRAVEL_API UFunction* Z_Construct_UFunction_ATimeTravelCharacter_PutOnArmor();
 	TIMETRAVEL_API UFunction* Z_Construct_UFunction_ATimeTravelCharacter_StartAttack();
 	TIMETRAVEL_API UFunction* Z_Construct_UFunction_ATimeTravelCharacter_TakeOffArmor();
@@ -38,6 +39,7 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelCharacter() {}
 		static const FNameNativePtrPair Funcs[] = {
 			{ "BPLeftRight", &ATimeTravelCharacter::execBPLeftRight },
 			{ "BPUpDown", &ATimeTravelCharacter::execBPUpDown },
+			{ "ChangeSword", &ATimeTravelCharacter::execChangeSword },
 			{ "PutOnArmor", &ATimeTravelCharacter::execPutOnArmor },
 			{ "StartAttack", &ATimeTravelCharacter::execStartAttack },
 			{ "TakeOffArmor", &ATimeTravelCharacter::execTakeOffArmor },
@@ -107,6 +109,39 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelCharacter() {}
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ATimeTravelCharacter_BPUpDown_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ATimeTravelCharacter_ChangeSword_Statics
+	{
+		struct TimeTravelCharacter_eventChangeSword_Parms
+		{
+			int32 InNum;
+		};
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_InNum;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ATimeTravelCharacter_ChangeSword_Statics::NewProp_InNum = { UE4CodeGen_Private::EPropertyClass::Int, "InNum", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000000080, 1, nullptr, STRUCT_OFFSET(TimeTravelCharacter_eventChangeSword_Parms, InNum), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ATimeTravelCharacter_ChangeSword_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ATimeTravelCharacter_ChangeSword_Statics::NewProp_InNum,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATimeTravelCharacter_ChangeSword_Statics::Function_MetaDataParams[] = {
+		{ "Category", "BPCalled" },
+		{ "ModuleRelativePath", "TimeTravelCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ATimeTravelCharacter_ChangeSword_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATimeTravelCharacter, "ChangeSword", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04020401, sizeof(TimeTravelCharacter_eventChangeSword_Parms), Z_Construct_UFunction_ATimeTravelCharacter_ChangeSword_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_ATimeTravelCharacter_ChangeSword_Statics::PropPointers), 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ATimeTravelCharacter_ChangeSword_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_ATimeTravelCharacter_ChangeSword_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ATimeTravelCharacter_ChangeSword()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ATimeTravelCharacter_ChangeSword_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -233,9 +268,10 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelCharacter() {}
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_PlayerHP;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SwordClass_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_WeaponClasses_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FClassPropertyParams NewProp_SwordClass;
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_WeaponClasses;
+		static const UE4CodeGen_Private::FClassPropertyParams NewProp_WeaponClasses_Inner;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BaseLookUpRate_MetaData[];
 #endif
@@ -263,6 +299,7 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelCharacter() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_ATimeTravelCharacter_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_ATimeTravelCharacter_BPLeftRight, "BPLeftRight" }, // 1023435938
 		{ &Z_Construct_UFunction_ATimeTravelCharacter_BPUpDown, "BPUpDown" }, // 1472585674
+		{ &Z_Construct_UFunction_ATimeTravelCharacter_ChangeSword, "ChangeSword" }, // 2714347978
 		{ &Z_Construct_UFunction_ATimeTravelCharacter_PutOnArmor, "PutOnArmor" }, // 2123885815
 		{ &Z_Construct_UFunction_ATimeTravelCharacter_StartAttack, "StartAttack" }, // 2395476261
 		{ &Z_Construct_UFunction_ATimeTravelCharacter_TakeOffArmor, "TakeOffArmor" }, // 1628419205
@@ -347,12 +384,14 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelCharacter() {}
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_PlayerHP = { UE4CodeGen_Private::EPropertyClass::Float, "PlayerHP", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000000005, 1, nullptr, STRUCT_OFFSET(ATimeTravelCharacter, PlayerHP), METADATA_PARAMS(Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_PlayerHP_MetaData, ARRAY_COUNT(Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_PlayerHP_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_SwordClass_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_WeaponClasses_MetaData[] = {
 		{ "Category", "Weapon" },
 		{ "ModuleRelativePath", "TimeTravelCharacter.h" },
+		{ "ToolTip", "UPROPERTY(EditDefaultsOnly, Category = Weapon)\n               TSubclassOf<class ASword> SwordClass;" },
 	};
 #endif
-	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_SwordClass = { UE4CodeGen_Private::EPropertyClass::Class, "SwordClass", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0014000000010001, 1, nullptr, STRUCT_OFFSET(ATimeTravelCharacter, SwordClass), Z_Construct_UClass_ASword_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_SwordClass_MetaData, ARRAY_COUNT(Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_SwordClass_MetaData)) };
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_WeaponClasses = { UE4CodeGen_Private::EPropertyClass::Array, "WeaponClasses", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0014000000010001, 1, nullptr, STRUCT_OFFSET(ATimeTravelCharacter, WeaponClasses), METADATA_PARAMS(Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_WeaponClasses_MetaData, ARRAY_COUNT(Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_WeaponClasses_MetaData)) };
+	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_WeaponClasses_Inner = { UE4CodeGen_Private::EPropertyClass::Class, "WeaponClasses", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0004000000000000, 1, nullptr, 0, Z_Construct_UClass_ASword_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_BaseLookUpRate_MetaData[] = {
 		{ "Category", "Camera" },
@@ -401,7 +440,8 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelCharacter() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_ArmorClass,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_MaxHP,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_PlayerHP,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_SwordClass,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_WeaponClasses,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_WeaponClasses_Inner,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_BaseLookUpRate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_BaseTurnRate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATimeTravelCharacter_Statics::NewProp_FollowCamera,
@@ -430,7 +470,7 @@ void EmptyLinkFunctionForGeneratedCodeTimeTravelCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ATimeTravelCharacter, 3810388453);
+	IMPLEMENT_CLASS(ATimeTravelCharacter, 3628245708);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ATimeTravelCharacter(Z_Construct_UClass_ATimeTravelCharacter, &ATimeTravelCharacter::StaticClass, TEXT("/Script/TimeTravel"), TEXT("ATimeTravelCharacter"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ATimeTravelCharacter);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

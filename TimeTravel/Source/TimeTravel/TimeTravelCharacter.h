@@ -31,8 +31,11 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
 	float BaseLookUpRate;
 
+	/*UPROPERTY(EditDefaultsOnly, Category = Weapon)
+		TSubclassOf<class ASword> SwordClass;*/
+
 	UPROPERTY(EditDefaultsOnly, Category = Weapon)
-		TSubclassOf<class ASword> SwordClass;
+		TArray<TSubclassOf<class ASword>> WeaponClasses;
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = Health)
 		float PlayerHP;
@@ -71,6 +74,11 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "BPCalled")
 		void TakeOffArmor();
+
+	void AddWeapon(class ASword* Weapon);
+	
+	UFUNCTION(BlueprintCallable, Category = "BPCalled")
+		void ChangeSword(int32 InNum);
 
 protected:
 
@@ -137,6 +145,14 @@ protected:
 	float AnimDuration;
 
 	class AArmor* DefaultArmor;
+
+	TArray<class ASword*> WeaponList;
+
+	void SetCurrentWeapon(class ASword* NewWeapon, class ASword* LastWeapon);
+
+	class ASword* CurrentWeapon;
+
+
 
 protected:
 	// APawn interface

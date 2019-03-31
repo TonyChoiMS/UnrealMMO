@@ -63,3 +63,8 @@ void ASword::NotifyActorBeginOverlap(AActor* OtherActor)
 	}
 }
 
+void ASword::OnUpEquip()
+{
+	SwordMesh->DetachFromComponent(FDetachmentTransformRules::KeepRelativeTransform);
+	SwordMesh->SetHiddenInGame(true);
+}
