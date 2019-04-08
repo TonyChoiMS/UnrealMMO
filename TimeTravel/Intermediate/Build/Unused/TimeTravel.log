@@ -3,48 +3,53 @@
   Using 'git status' to determine working set for adaptive non-unity build (C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO).
   Creating makefile for TimeTravelEditor (no existing makefile)
   Performing full C++ include scan (no include cache file)
-  Using Visual Studio 2017 14.16.27023 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023) and Windows 10.0.17763.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+  Using Visual Studio 2017 14.20.27508 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508) and Windows 10.0.17763.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Plugins\Climb\Source\Climb\Climb.Build.cs : warning : Modules must specify an explicit precompiled header (eg. PrivatePCHHeaderFile = "Public/Climb.h") from UE 4.21 onwards.
+C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Source\TimeTravel\TimeTravel.Build.cs : warning : Modules must specify an explicit precompiled header (eg. PrivatePCHHeaderFile = "Armor.h") from UE 4.21 onwards.
   Parsing headers for TimeTravelEditor
     Running UnrealHeaderTool "C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\TimeTravel.uproject" "C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Intermediate\Build\Win64\TimeTravelEditor\Development\TimeTravelEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
-  Reflection code generated for TimeTravelEditor in 7.8341097 seconds
-  Deleting old hot reload file: "C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Binaries\Win64\UE4Editor-TimeTravel-751.dll".
-  Deleting old hot reload file: "C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Binaries\Win64\UE4Editor-TimeTravel-751.pdb".
-  Building 32 actions with 6 processes...
-    [1/32] PCLaunch.rc
-    [2/32] PCLaunch.rc
-    [3/32] SharedPCH.Engine.cpp
-    [4/32] TimeTravel.init.gen.cpp
-    [5/32] TimeTravelGameInstance.gen.cpp
-    [6/32] Sword.gen.cpp
-    [7/32] TimeTravelCharacter.gen.cpp
-    [8/32] RobotCharacter.gen.cpp
-    [9/32] PickupActor.gen.cpp
-    [10/32] RobotAIController.gen.cpp
-    [11/32] BotTargetPoint.gen.cpp
-    [12/32] Armor.gen.cpp
-    [13/32] TimeTravelGameInstance.cpp
-    [14/32] BotTargetPoint.cpp
-    [15/32] BTTask_FindTargetPointLocation.gen.cpp
-    [16/32] BTTask_FindNearLocation.gen.cpp
-    [17/32] RobotAIController.cpp
-    [18/32] Sword.cpp
-    [19/32] TimeTravel.cpp
-    [20/32] TimeTravelGameMode.cpp
-    [21/32] PickupActor.cpp
-    [22/32] RobotCharacter.cpp
-    [23/32] Climb.cpp
-    [24/32] TimeTravelGameMode.gen.cpp
-    [25/32] UE4Editor-Climb.lib
+  Reflection code generated for TimeTravelEditor in 7.8807213 seconds
+  Deleting old hot reload file: "C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Binaries\Win64\UE4Editor-TimeTravel-2783.dll".
+  Deleting old hot reload file: "C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Binaries\Win64\UE4Editor-TimeTravel-2783.pdb".
+  Building 34 actions with 6 processes...
+    [1/34] PCLaunch.rc
+    [2/34] PCLaunch.rc
+    [3/34] SharedPCH.Engine.cpp
+    Detected compiler newer than Visual Studio 2017, please update min version checking in WindowsPlatformCompilerSetup.h
+    [4/34] TimeTravel.init.gen.cpp
+    [5/34] TimeTravelGameInstance.gen.cpp
+    [6/34] TimeTravelCharacter.gen.cpp
+    [7/34] RobotCharacter.gen.cpp
+    [8/34] Sword.gen.cpp
+    [9/34] RobotAIController.gen.cpp
+    [10/34] BotTargetPoint.gen.cpp
+    [11/34] Armor.gen.cpp
+    [12/34] PickupActor.gen.cpp
+    [13/34] TimeTravelGameInstance.cpp
+    [14/34] ItemUserWidget.gen.cpp
+    [15/34] BTTask_FindNearLocation.gen.cpp
+    [16/34] BTTask_FindTargetPointLocation.gen.cpp
+    [17/34] RobotAIController.cpp
+    [18/34] TimeTravelGameMode.cpp
+    [19/34] TimeTravel.cpp
+    [20/34] ItemUserWidget.cpp
+    [21/34] Sword.cpp
+    [22/34] BotTargetPoint.cpp
+    [23/34] RobotCharacter.cpp
+    [24/34] Climb.cpp
+    [25/34] UE4Editor-Climb.lib
        C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Plugins\Climb\Intermediate\Build\Win64\UE4Editor\Development\Climb\UE4Editor-Climb.lib 라이브러리 및 C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Plugins\Climb\Intermediate\Build\Win64\UE4Editor\Development\Climb\UE4Editor-Climb.exp 개체를 생성하고 있습니다.
-    [26/32] UE4Editor-Climb.dll
+    [26/34] BTTask_FindNearLocation.cpp
+    [27/34] TimeTravelGameMode.gen.cpp
+    [28/34] UE4Editor-Climb.dll
        C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Plugins\Climb\Intermediate\Build\Win64\UE4Editor\Development\Climb\UE4Editor-Climb.suppressed.lib 라이브러리 및 C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Plugins\Climb\Intermediate\Build\Win64\UE4Editor\Development\Climb\UE4Editor-Climb.suppressed.exp 개체를 생성하고 있습니다.
-    [27/32] BTTask_FindTargetPointLocation.cpp
-    [28/32] Armor.cpp
-    [29/32] TimeTravelCharacter.cpp
-    [30/32] BTTask_FindNearLocation.cpp
-    [31/32] UE4Editor-TimeTravel.lib
+    [29/34] PickupActor.cpp
+    [30/34] BTTask_FindTargetPointLocation.cpp
+    [31/34] TimeTravelCharacter.cpp
+    [32/34] Armor.cpp
+    [33/34] UE4Editor-TimeTravel.lib
        C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Intermediate\Build\Win64\UE4Editor\Development\TimeTravel\UE4Editor-TimeTravel.lib 라이브러리 및 C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Intermediate\Build\Win64\UE4Editor\Development\TimeTravel\UE4Editor-TimeTravel.exp 개체를 생성하고 있습니다.
-    [32/32] UE4Editor-TimeTravel.dll
+    [34/34] UE4Editor-TimeTravel.dll
        C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Intermediate\Build\Win64\UE4Editor\Development\TimeTravel\UE4Editor-TimeTravel.suppressed.lib 라이브러리 및 C:\Users\MinLion\Desktop\UnrealProjects\UnrealMMO\TimeTravel\Intermediate\Build\Win64\UE4Editor\Development\TimeTravel\UE4Editor-TimeTravel.suppressed.exp 개체를 생성하고 있습니다.
   Deploying TimeTravelEditor Win64 Development...
-  Total build time: 69.98 seconds (Parallel executor: 56.85 seconds)
+  Total build time: 81.77 seconds (Parallel executor: 56.33 seconds)

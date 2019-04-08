@@ -17,9 +17,47 @@ void EmptyLinkFunctionForGeneratedCodeItemUserWidget() {}
 	TIMETRAVEL_API UClass* Z_Construct_UClass_UItemUserWidget();
 	UMG_API UClass* Z_Construct_UClass_UUserWidget();
 	UPackage* Z_Construct_UPackage__Script_TimeTravel();
+	TIMETRAVEL_API UFunction* Z_Construct_UFunction_UItemUserWidget_SetName();
 // End Cross Module References
 	void UItemUserWidget::StaticRegisterNativesUItemUserWidget()
 	{
+		UClass* Class = UItemUserWidget::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "SetName", &UItemUserWidget::execSetName },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_UItemUserWidget_SetName_Statics
+	{
+		struct ItemUserWidget_eventSetName_Parms
+		{
+			FString Name;
+		};
+		static const UE4CodeGen_Private::FStrPropertyParams NewProp_Name;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UItemUserWidget_SetName_Statics::NewProp_Name = { UE4CodeGen_Private::EPropertyClass::Str, "Name", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000000080, 1, nullptr, STRUCT_OFFSET(ItemUserWidget_eventSetName_Parms, Name), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UItemUserWidget_SetName_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UItemUserWidget_SetName_Statics::NewProp_Name,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UItemUserWidget_SetName_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "ItemUserWidget.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UItemUserWidget_SetName_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UItemUserWidget, "SetName", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x00020401, sizeof(ItemUserWidget_eventSetName_Parms), Z_Construct_UFunction_UItemUserWidget_SetName_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_UItemUserWidget_SetName_Statics::PropPointers), 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UItemUserWidget_SetName_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_UItemUserWidget_SetName_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UItemUserWidget_SetName()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UItemUserWidget_SetName_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	UClass* Z_Construct_UClass_UItemUserWidget_NoRegister()
 	{
@@ -28,6 +66,7 @@ void EmptyLinkFunctionForGeneratedCodeItemUserWidget() {}
 	struct Z_Construct_UClass_UItemUserWidget_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
@@ -37,6 +76,9 @@ void EmptyLinkFunctionForGeneratedCodeItemUserWidget() {}
 	UObject* (*const Z_Construct_UClass_UItemUserWidget_Statics::DependentSingletons[])() = {
 		(UObject* (*)())Z_Construct_UClass_UUserWidget,
 		(UObject* (*)())Z_Construct_UPackage__Script_TimeTravel,
+	};
+	const FClassFunctionLinkInfo Z_Construct_UClass_UItemUserWidget_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_UItemUserWidget_SetName, "SetName" }, // 1147168331
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UItemUserWidget_Statics::Class_MetaDataParams[] = {
@@ -51,7 +93,7 @@ void EmptyLinkFunctionForGeneratedCodeItemUserWidget() {}
 		&UItemUserWidget::StaticClass,
 		DependentSingletons, ARRAY_COUNT(DependentSingletons),
 		0x00B010A0u,
-		nullptr, 0,
+		FuncInfo, ARRAY_COUNT(FuncInfo),
 		nullptr, 0,
 		nullptr,
 		&StaticCppClassTypeInfo,
@@ -67,7 +109,7 @@ void EmptyLinkFunctionForGeneratedCodeItemUserWidget() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UItemUserWidget, 4111660447);
+	IMPLEMENT_CLASS(UItemUserWidget, 4113797077);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_UItemUserWidget(Z_Construct_UClass_UItemUserWidget, &UItemUserWidget::StaticClass, TEXT("/Script/TimeTravel"), TEXT("UItemUserWidget"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UItemUserWidget);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

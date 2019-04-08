@@ -18,6 +18,12 @@ APickupActor::APickupActor()
 	BoxCollisionComp->SetCollisionResponseToAllChannels(ECR_Ignore);		// 컬리전이 모든 채널과 반응하지 않도록 무시로 설정
 	BoxCollisionComp->SetCollisionResponseToChannel(ECC_GameTraceChannel1, ECR_Overlap);		// 컬리전이 플레이어만 오버랩 될 수 있도록 설정
 	BoxCollisionComp->SetupAttachment(RootComponent);						// 박스 컴포넌트를 RootComponent에 추가
+
+	WidgetComponent = CreateDefaultSubobject<UWidgetComponent>(TEXT("WidgetComponent"));
+	WidgetComponent->SetupAttachment(RootComponent);
+	WidgetComponent->SetWidgetClass(UItemUserWidget::StaticClass());
+	WidgetComponent->SetWidgetSpace(EWidgetSpace::Screen);
+	WidgetComponent->SetDrawAtDesiredSize(true);
 }
 
 // Called when the game starts or when spawned
@@ -45,6 +51,15 @@ void APickupActor::NotifyActorBeginOverlap(AActor* OtherActor)
 
 		UTimeTravelGameInstance* GameInstance = Cast<UTimeTravelGameInstance>(UGameplayStatics::GetGameInstance(this));
 		GameInstance->TestScore += 10;
+
+		WidgetComponent->SetVisibility(true);
+
+		UItemUserWidget* Widget = Cast<UItemUserWidget>(WidgetComponent->GetUserWidgetObject());
+
+		if (Widget)
+		{
+			Widget->SetName(Name);
+		}
 	}
 }
 
@@ -56,6 +71,8 @@ void APickupActor::NotifyActorEndOverlap(AActor* OtherActor)
 	if (OtherActor->IsA(StaticClass()))
 	{
 		BoxCollisionComp->DestroyComponent();
+
+		WidgetComponent->DestroyComponent();
 	}
 }
 

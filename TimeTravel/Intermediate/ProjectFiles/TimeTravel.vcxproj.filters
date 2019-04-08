@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\TimeTravel.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{1D1BE491-67DF-4915-B13B-B1BF7E4A2E79}</UniqueIdentifier>
+      <UniqueIdentifier>{2711DAE2-A670-4FCD-83A8-947D21B8CA76}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\TimeTravel.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{BA3075E6-FE6F-4400-966F-0C752CF7FDEF}</UniqueIdentifier>
+      <UniqueIdentifier>{580B1566-4D22-4FF4-8D11-562E4828F3F1}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,28 +30,28 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Plugins">
-      <UniqueIdentifier>{9F238349-793B-43F2-9B62-F9B730F9E2E8}</UniqueIdentifier>
+      <UniqueIdentifier>{86AB7C44-8C8B-453F-B887-7AE4BEF9111E}</UniqueIdentifier>
     </Filter>
     <Filter Include="Plugins\Climb">
-      <UniqueIdentifier>{D9D998E9-6C24-41D8-B02C-DC33DE121505}</UniqueIdentifier>
+      <UniqueIdentifier>{BC315C1D-0AEE-4221-866A-D7DC281DD984}</UniqueIdentifier>
     </Filter>
     <Filter Include="Plugins\Climb\Source">
-      <UniqueIdentifier>{490E1F90-CCD7-45ED-A5F4-AEA78C2BD835}</UniqueIdentifier>
+      <UniqueIdentifier>{9407BBE9-6594-4CE9-A696-0604266B7FE2}</UniqueIdentifier>
     </Filter>
     <Filter Include="Plugins\Climb\Source\Climb">
-      <UniqueIdentifier>{6FD21901-A63D-4F5E-A8FD-FECFAAE2AF4B}</UniqueIdentifier>
+      <UniqueIdentifier>{1046A259-82D1-408F-99A6-0500BF688686}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Plugins\Climb\Source\Climb\Climb.Build.cs">
       <Filter>Plugins\Climb\Source\Climb</Filter>
     </None>
     <Filter Include="Plugins\Climb\Source\Climb\Private">
-      <UniqueIdentifier>{F488CAAC-0B1F-43C9-86B2-324A1EE04DA3}</UniqueIdentifier>
+      <UniqueIdentifier>{DCEC4055-0A8F-4996-B959-0D5D752DD9C5}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Plugins\Climb\Source\Climb\Private\Climb.cpp">
       <Filter>Plugins\Climb\Source\Climb\Private</Filter>
     </ClCompile>
     <Filter Include="Plugins\Climb\Source\Climb\Public">
-      <UniqueIdentifier>{BD782B7D-BE00-4FAD-B40A-A22F9BC57642}</UniqueIdentifier>
+      <UniqueIdentifier>{4B738233-17D7-4FD4-96B4-3316B8DA4196}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Plugins\Climb\Source\Climb\Public\Climb.h">
       <Filter>Plugins\Climb\Source\Climb\Public</Filter>
@@ -60,13 +60,13 @@
       <Filter>Plugins\Climb</Filter>
     </None>
     <Filter Include="Plugins\Climb\Resources">
-      <UniqueIdentifier>{5FA25F7D-46C8-4365-822C-19D71BDA9E87}</UniqueIdentifier>
+      <UniqueIdentifier>{D5B04909-4423-4876-8AA1-98F02F49D979}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Plugins\Climb\Resources\Icon128.png">
       <Filter>Plugins\Climb\Resources</Filter>
     </None>
     <Filter Include="Source\TimeTravel">
-      <UniqueIdentifier>{994C3EC9-8221-4DDB-BC14-0346E826240E}</UniqueIdentifier>
+      <UniqueIdentifier>{D27678ED-168A-43DB-9278-047A23885A46}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\TimeTravel\Armor.cpp">
       <Filter>Source\TimeTravel</Filter>

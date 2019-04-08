@@ -13,9 +13,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TIMETRAVEL_PickupActor_generated_h
 
-#define TimeTravel_Source_TimeTravel_PickupActor_h_12_RPC_WRAPPERS
-#define TimeTravel_Source_TimeTravel_PickupActor_h_12_RPC_WRAPPERS_NO_PURE_DECLS
-#define TimeTravel_Source_TimeTravel_PickupActor_h_12_INCLASS_NO_PURE_DECLS \
+#define TimeTravel_Source_TimeTravel_PickupActor_h_14_RPC_WRAPPERS
+#define TimeTravel_Source_TimeTravel_PickupActor_h_14_RPC_WRAPPERS_NO_PURE_DECLS
+#define TimeTravel_Source_TimeTravel_PickupActor_h_14_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAPickupActor(); \
 	friend struct Z_Construct_UClass_APickupActor_Statics; \
@@ -24,7 +24,7 @@ public: \
 	DECLARE_SERIALIZER(APickupActor)
 
 
-#define TimeTravel_Source_TimeTravel_PickupActor_h_12_INCLASS \
+#define TimeTravel_Source_TimeTravel_PickupActor_h_14_INCLASS \
 private: \
 	static void StaticRegisterNativesAPickupActor(); \
 	friend struct Z_Construct_UClass_APickupActor_Statics; \
@@ -33,7 +33,7 @@ public: \
 	DECLARE_SERIALIZER(APickupActor)
 
 
-#define TimeTravel_Source_TimeTravel_PickupActor_h_12_STANDARD_CONSTRUCTORS \
+#define TimeTravel_Source_TimeTravel_PickupActor_h_14_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API APickupActor(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(APickupActor) \
@@ -46,7 +46,7 @@ private: \
 public:
 
 
-#define TimeTravel_Source_TimeTravel_PickupActor_h_12_ENHANCED_CONSTRUCTORS \
+#define TimeTravel_Source_TimeTravel_PickupActor_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API APickupActor(APickupActor&&); \
@@ -57,30 +57,31 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(APickupActor); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(APickupActor)
 
 
-#define TimeTravel_Source_TimeTravel_PickupActor_h_12_PRIVATE_PROPERTY_OFFSET \
+#define TimeTravel_Source_TimeTravel_PickupActor_h_14_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__MeshComp() { return STRUCT_OFFSET(APickupActor, MeshComp); } \
-	FORCEINLINE static uint32 __PPO__BoxCollisionComp() { return STRUCT_OFFSET(APickupActor, BoxCollisionComp); }
+	FORCEINLINE static uint32 __PPO__BoxCollisionComp() { return STRUCT_OFFSET(APickupActor, BoxCollisionComp); } \
+	FORCEINLINE static uint32 __PPO__WidgetComponent() { return STRUCT_OFFSET(APickupActor, WidgetComponent); }
 
 
-#define TimeTravel_Source_TimeTravel_PickupActor_h_9_PROLOG
-#define TimeTravel_Source_TimeTravel_PickupActor_h_12_GENERATED_BODY_LEGACY \
+#define TimeTravel_Source_TimeTravel_PickupActor_h_11_PROLOG
+#define TimeTravel_Source_TimeTravel_PickupActor_h_14_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	TimeTravel_Source_TimeTravel_PickupActor_h_12_PRIVATE_PROPERTY_OFFSET \
-	TimeTravel_Source_TimeTravel_PickupActor_h_12_RPC_WRAPPERS \
-	TimeTravel_Source_TimeTravel_PickupActor_h_12_INCLASS \
-	TimeTravel_Source_TimeTravel_PickupActor_h_12_STANDARD_CONSTRUCTORS \
+	TimeTravel_Source_TimeTravel_PickupActor_h_14_PRIVATE_PROPERTY_OFFSET \
+	TimeTravel_Source_TimeTravel_PickupActor_h_14_RPC_WRAPPERS \
+	TimeTravel_Source_TimeTravel_PickupActor_h_14_INCLASS \
+	TimeTravel_Source_TimeTravel_PickupActor_h_14_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define TimeTravel_Source_TimeTravel_PickupActor_h_12_GENERATED_BODY \
+#define TimeTravel_Source_TimeTravel_PickupActor_h_14_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	TimeTravel_Source_TimeTravel_PickupActor_h_12_PRIVATE_PROPERTY_OFFSET \
-	TimeTravel_Source_TimeTravel_PickupActor_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
-	TimeTravel_Source_TimeTravel_PickupActor_h_12_INCLASS_NO_PURE_DECLS \
-	TimeTravel_Source_TimeTravel_PickupActor_h_12_ENHANCED_CONSTRUCTORS \
+	TimeTravel_Source_TimeTravel_PickupActor_h_14_PRIVATE_PROPERTY_OFFSET \
+	TimeTravel_Source_TimeTravel_PickupActor_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+	TimeTravel_Source_TimeTravel_PickupActor_h_14_INCLASS_NO_PURE_DECLS \
+	TimeTravel_Source_TimeTravel_PickupActor_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodePickupActor() {}
 	TIMETRAVEL_API UClass* Z_Construct_UClass_APickupActor();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_TimeTravel();
+	UMG_API UClass* Z_Construct_UClass_UWidgetComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 // End Cross Module References
@@ -34,6 +35,10 @@ void EmptyLinkFunctionForGeneratedCodePickupActor() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_WidgetComponent_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_WidgetComponent;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BoxCollisionComp_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_BoxCollisionComp;
@@ -41,6 +46,10 @@ void EmptyLinkFunctionForGeneratedCodePickupActor() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MeshComp_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MeshComp;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Name_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStrPropertyParams NewProp_Name;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -55,6 +64,14 @@ void EmptyLinkFunctionForGeneratedCodePickupActor() {}
 		{ "ModuleRelativePath", "PickupActor.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APickupActor_Statics::NewProp_WidgetComponent_MetaData[] = {
+		{ "Category", "WidgetComp" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "PickupActor.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APickupActor_Statics::NewProp_WidgetComponent = { UE4CodeGen_Private::EPropertyClass::Object, "WidgetComponent", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x002008000008000d, 1, nullptr, STRUCT_OFFSET(APickupActor, WidgetComponent), Z_Construct_UClass_UWidgetComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APickupActor_Statics::NewProp_WidgetComponent_MetaData, ARRAY_COUNT(Z_Construct_UClass_APickupActor_Statics::NewProp_WidgetComponent_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APickupActor_Statics::NewProp_BoxCollisionComp_MetaData[] = {
 		{ "Category", "Collision" },
@@ -71,9 +88,19 @@ void EmptyLinkFunctionForGeneratedCodePickupActor() {}
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APickupActor_Statics::NewProp_MeshComp = { UE4CodeGen_Private::EPropertyClass::Object, "MeshComp", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x00200800000b0009, 1, nullptr, STRUCT_OFFSET(APickupActor, MeshComp), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APickupActor_Statics::NewProp_MeshComp_MetaData, ARRAY_COUNT(Z_Construct_UClass_APickupActor_Statics::NewProp_MeshComp_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APickupActor_Statics::NewProp_Name_MetaData[] = {
+		{ "Category", "Item" },
+		{ "ModuleRelativePath", "PickupActor.h" },
+		{ "ToolTip", "???????? ?????? ?? \xc8\xa3???\xc7\xb4? ?\xd4\xbc? OtherActor?? ?\xe6\xb5\xb9?\xc7\xb4? Actor?? ?\xc7\xb9???." },
+	};
+#endif
+	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UClass_APickupActor_Statics::NewProp_Name = { UE4CodeGen_Private::EPropertyClass::Str, "Name", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000000005, 1, nullptr, STRUCT_OFFSET(APickupActor, Name), METADATA_PARAMS(Z_Construct_UClass_APickupActor_Statics::NewProp_Name_MetaData, ARRAY_COUNT(Z_Construct_UClass_APickupActor_Statics::NewProp_Name_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APickupActor_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APickupActor_Statics::NewProp_WidgetComponent,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APickupActor_Statics::NewProp_BoxCollisionComp,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APickupActor_Statics::NewProp_MeshComp,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APickupActor_Statics::NewProp_Name,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_APickupActor_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<APickupActor>::IsAbstract,
@@ -98,7 +125,7 @@ void EmptyLinkFunctionForGeneratedCodePickupActor() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APickupActor, 3542540069);
+	IMPLEMENT_CLASS(APickupActor, 1591484638);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_APickupActor(Z_Construct_UClass_APickupActor, &APickupActor::StaticClass, TEXT("/Script/TimeTravel"), TEXT("APickupActor"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(APickupActor);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
