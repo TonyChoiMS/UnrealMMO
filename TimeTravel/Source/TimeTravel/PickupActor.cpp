@@ -50,7 +50,10 @@ void APickupActor::NotifyActorBeginOverlap(AActor* OtherActor)
 		MeshComp->DestroyComponent();
 
 		UTimeTravelGameInstance* GameInstance = Cast<UTimeTravelGameInstance>(UGameplayStatics::GetGameInstance(this));
+		GameInstance->LoadCustomInt("Score", GameInstance->TestScore);
 		GameInstance->TestScore += 10;
+		GameInstance->SaveCustomInt("Score", GameInstance->TestScore);
+		GameInstance->SaveGame();
 
 		WidgetComponent->SetVisibility(true);
 
